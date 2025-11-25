@@ -35,22 +35,22 @@ export default function AdminLoginPage({ setCurrentPage, setIsAdmin }) {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-dark to-primary-light flex items-center justify-center px-4">
+    <div className="min-h-screen bg-gradient-to-br from-primary-dark/80 via-primary-light/80 to-primary-lighter flex items-center justify-center px-4 py-10 sm:py-12">
       {/* Login Container */}
-      <div className="w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden">
+      <div className="w-full max-w-md bg-white/95 backdrop-blur rounded-2xl shadow-xl border border-primary-light/20 overflow-hidden mx-auto">
         {/* Header */}
-        <div className="bg-primary-light text-white p-8 text-center">
+        <div className="bg-primary-light/90 text-white p-6 sm:p-8 text-center">
           <img
             src="/images/{hero,news,maps,achievements,components}/logo.png"
             alt="Kelurahan Jagakarsa Logo"
             className="w-20 h-20 object-contain mx-auto mb-4"
           />
-          <h1 className="text-3xl font-bold mb-2">Admin Portal</h1>
-          <p className="text-primary-lighter">Kelurahan Jagakarsa</p>
+          <h1 className="text-2xl sm:text-3xl font-bold mb-1">Admin Portal</h1>
+          <p className="text-primary-lighter text-sm sm:text-base">Kelurahan Jagakarsa</p>
         </div>
 
         {/* Form */}
-        <form onSubmit={handleLogin} className="p-8 space-y-6">
+        <form onSubmit={handleLogin} className="p-6 sm:p-8 space-y-6 sm:space-y-7 bg-white/90">
           {/* Error Message */}
           {error && (
             <div className="bg-red-100 border-2 border-red-500 text-red-700 px-4 py-3 rounded-lg">
