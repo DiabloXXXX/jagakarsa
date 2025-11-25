@@ -150,8 +150,6 @@ export default function Header({ setCurrentPage, onOpenChatbot, currentPage }) {
         </div>
       )}
 
-      {/* Accent Bar */}
-      <div className="h-3.5 bg-secondary"></div>
     </header>
   )
 }
