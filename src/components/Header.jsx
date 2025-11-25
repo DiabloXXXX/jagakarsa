@@ -65,6 +65,7 @@ export default function Header({ setCurrentPage, onOpenChatbot, currentPage }) {
                 <button onClick={() => handleNavClick('vision-mission')} className="w-full text-left px-4 py-3 hover:bg-primary-lighter font-semibold border-t text-base">Visi & Misi</button>
                 <button onClick={() => handleNavClick('organization')} className="w-full text-left px-4 py-3 hover:bg-primary-lighter font-semibold border-t text-base">Struktur Organisasi</button>
                 <button onClick={() => handleNavClick('tasks')} className="w-full text-left px-4 py-3 hover:bg-primary-lighter font-semibold border-t text-base">Tugas & Fungsi</button>
+                <button onClick={() => handleNavClick('pjlp')} className="w-full text-left px-4 py-3 hover:bg-primary-lighter font-semibold border-t text-base">PJLP</button>
               </div>
             </div>
 
@@ -123,6 +124,7 @@ export default function Header({ setCurrentPage, onOpenChatbot, currentPage }) {
                   <button onClick={() => handleNavClick('vision-mission')} className="w-full text-left px-4 py-2 hover:bg-primary-lighter rounded font-semibold text-base text-primary-dark">Visi & Misi</button>
                   <button onClick={() => handleNavClick('organization')} className="w-full text-left px-4 py-2 hover:bg-primary-lighter rounded font-semibold text-base text-primary-dark">Struktur Organisasi</button>
                   <button onClick={() => handleNavClick('tasks')} className="w-full text-left px-4 py-2 hover:bg-primary-lighter rounded font-semibold text-base text-primary-dark">Tugas & Fungsi</button>
+                  <button onClick={() => handleNavClick('pjlp')} className="w-full text-left px-4 py-2 hover:bg-primary-lighter rounded font-semibold text-base text-primary-dark">PJLP</button>
                 </div>
               )}
             </div>

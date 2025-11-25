@@ -22,6 +22,7 @@ import ServicesInfoPage from './pages/ServicesInfoPage'
 import BerandaPage from './pages/BerandaPage'
 import AdminLoginPage from './pages/AdminLoginPage'
 import AdminDashboardPage from './pages/AdminDashboardPage'
+import PJLPPage from './pages/PJLPPage'
 
 function App() {
   const [showChatbot, setShowChatbot] = useState(false)
@@ -68,6 +69,8 @@ function App() {
         return <TasksPage setCurrentPage={setCurrentPage} onOpenChatbot={handleOpenChatbot} />
       case 'organization':
         return <OrganizationStructurePage setCurrentPage={setCurrentPage} onOpenChatbot={handleOpenChatbot} />
+      case 'pjlp':
+        return <PJLPPage setCurrentPage={setCurrentPage} onOpenChatbot={handleOpenChatbot} />
       case 'community-orgs':
         return <CommunityOrganizationsPage setCurrentPage={setCurrentPage} onOpenChatbot={handleOpenChatbot} />
       case 'news':
@@ -84,24 +87,32 @@ function App() {
     }
   }
 
+  const isAdminPage = currentPage === 'admin-login' || currentPage === 'admin-dashboard' || currentPage === 'admin'
+
   return (
     <div>
       {renderPage()}
-      <Chatbot isOpen={showChatbot} setIsOpen={setShowChatbot} />
-      <VisitorStats />
-      
-      {/* Floating Chatbot Button */}
-      <button
-        onClick={() => setShowChatbot(!showChatbot)}
-        className="fixed bottom-6 right-6 w-14 h-14 rounded-full shadow-lg flex items-center justify-center hover:opacity-80 transition-all z-40"
-        title="Buka Chatbot"
-      >
-        <img
-          src="/images/{hero,news,maps,achievements,components}/FAQ.png"
-          alt="Buka Chatbot"
-          className="w-full h-full object-contain"
-        />
-      </button>
+
+      {/* Hanya tampilkan chatbot & statistik di halaman publik */}
+      {!isAdminPage && (
+        <>
+          <Chatbot isOpen={showChatbot} setIsOpen={setShowChatbot} />
+          <VisitorStats />
+
+          {/* Floating Chatbot Button */}
+          <button
+            onClick={() => setShowChatbot(!showChatbot)}
+            className="fixed bottom-6 right-6 w-10 sm:w-12 md:w-14 h-10 sm:h-12 md:h-14 rounded-full shadow-lg flex items-center justify-center hover:opacity-80 transition-all z-40"
+            title="Buka Chatbot"
+          >
+            <img
+              src="/images/{hero,news,maps,achievements,components}/FAQ.png"
+              alt="Buka Chatbot"
+              className="w-full h-full object-contain"
+            />
+          </button>
+        </>
+      )}
     </div>
   )
 }
