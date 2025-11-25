@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { LogOut, Edit, Trash2, Plus, Search } from 'lucide-react'
+import { LogOut, Edit, Trash2, Plus, Search, TrendingUp, Settings } from 'lucide-react'
+import { visitorStats, headerConfig } from '../config/siteConfig'
 
 export default function AdminDashboardPage({ setCurrentPage, setIsAdmin }) {
   const [activeSection, setActiveSection] = useState('pages')
@@ -27,6 +28,8 @@ export default function AdminDashboardPage({ setCurrentPage, setIsAdmin }) {
     timur: '',
     barat: ''
   })
+  const [headerEdit, setHeaderEdit] = useState(headerConfig)
+  const [visitorEdit, setVisitorEdit] = useState(visitorStats)
 
   const handleLogout = () => {
     setIsAdmin(false)
@@ -332,9 +335,103 @@ export default function AdminDashboardPage({ setCurrentPage, setIsAdmin }) {
                 <h2 className="text-4xl font-bold text-primary-dark mb-2">⚙️ Pengaturan</h2>
                 <p className="text-gray-600">Atur konfigurasi website Kelurahan Jagakarsa</p>
               </div>
-              <div className="bg-white rounded-lg shadow-lg p-12 text-center border-2 border-gray-200">
-                <p className="text-primary-dark text-xl mb-4 font-semibold">🚀 Fitur pengaturan akan segera tersedia</p>
-                <p className="text-gray-600">Kelola pengaturan umum, keamanan, dan preferensi website</p>
+
+              {/* Header Settings */}
+              <div className="bg-white rounded-lg shadow-lg p-8 border-2 border-gray-200">
+                <div className="flex items-center gap-3 mb-6">
+                  <Settings size={28} className="text-primary-dark" />
+                  <h3 className="text-2xl font-bold text-primary-dark">Pengaturan Header Beranda</h3>
+                </div>
+                <div className="space-y-6">
+                  <div>
+                    <label className="block text-lg font-semibold text-primary-dark mb-3">Judul Header</label>
+                    <input
+                      type="text"
+                      value={headerEdit.title}
+                      onChange={(e) => setHeaderEdit({ ...headerEdit, title: e.target.value })}
+                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-primary-light text-lg"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-lg font-semibold text-primary-dark mb-3">Subjudul</label>
+                    <textarea
+                      value={headerEdit.subtitle}
+                      onChange={(e) => setHeaderEdit({ ...headerEdit, subtitle: e.target.value })}
+                      rows="3"
+                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-primary-light text-lg"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-lg font-semibold text-primary-dark mb-3">Teks Tombol CTA</label>
+                    <input
+                      type="text"
+                      value={headerEdit.ctaText}
+                      onChange={(e) => setHeaderEdit({ ...headerEdit, ctaText: e.target.value })}
+                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-primary-light text-lg"
+                    />
+                  </div>
+                  <button
+                    onClick={() => alert('Perubahan header disimpan! (Placeholder - butuh backend untuk persistent)')}
+                    className="w-full bg-primary-light hover:bg-primary-dark text-white font-bold py-3 px-6 rounded-lg transition-all text-lg"
+                  >
+                    Simpan Pengaturan Header
+                  </button>
+                </div>
+              </div>
+
+              {/* Visitor Statistics Settings */}
+              <div className="bg-white rounded-lg shadow-lg p-8 border-2 border-gray-200">
+                <div className="flex items-center gap-3 mb-6">
+                  <TrendingUp size={28} className="text-secondary" />
+                  <h3 className="text-2xl font-bold text-primary-dark">Statistik Pengunjung</h3>
+                </div>
+                <div className="space-y-6">
+                  <div>
+                    <label className="block text-lg font-semibold text-primary-dark mb-3">Total Pengunjung (Manual)</label>
+                    <input
+                      type="text"
+                      value={visitorEdit.totalVisitors}
+                      onChange={(e) => setVisitorEdit({ ...visitorEdit, totalVisitors: e.target.value })}
+                      placeholder="Contoh: 12,345"
+                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-primary-light text-lg"
+                    />
+                    <p className="text-sm text-gray-500 mt-2">Angka ini ditampilkan di footer sebagai total pengunjung keseluruhan</p>
+                  </div>
+                  <div>
+                    <label className="block text-lg font-semibold text-primary-dark mb-3">Pengunjung Bulanan</label>
+                    <input
+                      type="text"
+                      value={visitorEdit.monthlyVisitors}
+                      onChange={(e) => setVisitorEdit({ ...visitorEdit, monthlyVisitors: e.target.value })}
+                      placeholder="Contoh: 2,150"
+                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-primary-light text-lg"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-lg font-semibold text-primary-dark mb-3">Tanggal Update Terakhir</label>
+                    <input
+                      type="text"
+                      value={visitorEdit.lastUpdate}
+                      onChange={(e) => setVisitorEdit({ ...visitorEdit, lastUpdate: e.target.value })}
+                      placeholder="Contoh: November 2025"
+                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-primary-light text-lg"
+                    />
+                  </div>
+                  <div className="bg-gray-50 p-6 rounded-lg border-2 border-gray-200">
+                    <p className="text-sm text-gray-600 mb-4">
+                      <strong>Catatan:</strong> Statistik pengunjung per-perangkat dihitung otomatis dari localStorage dan tidak dapat diubah di sini.
+                    </p>
+                    <p className="text-sm text-gray-600">
+                      Untuk integrasi dengan backend atau Google Analytics yang sebenarnya, hubungi developer.
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => alert('Statistik pengunjung diperbarui! (Placeholder - butuh backend untuk persistent)')}
+                    className="w-full bg-secondary hover:bg-orange-600 text-black font-bold py-3 px-6 rounded-lg transition-all text-lg"
+                  >
+                    Perbarui Statistik
+                  </button>
+                </div>
               </div>
             </div>
           )}

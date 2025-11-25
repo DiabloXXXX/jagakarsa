@@ -2,6 +2,7 @@ import React from 'react'
 import { MapPin, ArrowRight } from 'lucide-react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import { siteStats } from '../config/siteConfig'
 
 export default function BerandaPage({ setCurrentPage, onOpenChatbot }) {
 
@@ -29,21 +30,21 @@ export default function BerandaPage({ setCurrentPage, onOpenChatbot }) {
       type: 'Sertifikat GIA',
       title: 'Inisiator dari Inovasi Pengolahan Sampah Organik',
       date: '8 September 2025',
-      image: '/images/{hero,news,maps,achievements,components}/achievement-sertifikat-gia.jpg',
+      image: '/images/achievements/prestasi-1.jpg',
       action: 'Lihat Selengkapnya'
     },
     {
       type: 'Presentasi',
       title: 'Pengolahan Sampah Organik',
       date: '8 September 2025',
-      image: '/images/{hero,news,maps,achievements,components}/achievement-presentasi-sampah.jpg',
+      image: '/images/achievements/prestasi-2.jpg',
       action: 'Lihat Presentasi'
     },
     {
       type: 'Video',
       title: 'Kualitas Inovasi Daerah',
       date: '8 September 2025',
-      image: '/images/{hero,news,maps,achievements,components}/achievement-video-inovasi.jpg',
+      image: '/images/achievements/prestasi-3.jpg',
       action: 'Lihat Video'
     }
   ]
@@ -90,8 +91,8 @@ export default function BerandaPage({ setCurrentPage, onOpenChatbot }) {
           <div className="text-base sm:text-lg md:text-2xl text-black leading-relaxed space-y-4 sm:space-y-6">
             <p>
               Kelurahan Jagakarsa merupakan salah satu Kelurahan yang berada di Kecamatan Jagakarsa Kota Administrasi Jakarta Selatan yang memiliki{' '}
-              <span className="font-bold">luas sebesar : 4,850,000 m²</span> serta mempunyai{' '}
-              <span className="font-bold">7 RW</span> dan <span className="font-bold">82 RT</span>.
+              <span className="font-bold">luas sebesar : {siteStats.luas}</span> serta mempunyai{' '}
+              <span className="font-bold">{siteStats.rw} RW</span> dan <span className="font-bold">{siteStats.rt} RT</span>.
             </p>
             <p>
               Kelurahan Jagakarsa sebagai instansi pemerintah yang melayani masyarakat harus menjalankan fungsi dengan sebaik-baiknya. Karena standar organisasi dan kinerja Kelurahan telah diatur oleh Undang-undang serta peraturan yang ada. Untuk itu, sebagai pertanggungjawaban dari hasil kegiatan dan pelayanan yang dilakukan.

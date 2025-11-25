@@ -19,7 +19,7 @@ export default function NewsPage({ setCurrentPage, onOpenChatbot }) {
       source: 'WahanaNews Jakarta.co',
       sourceUrl: 'jakarta.wahananews.co',
       date: '13 Februari 2025',
-      image: '/images/{hero,news,maps,achievements,components}/news-maggot-01.jpg',
+      image: '/images/news/berita-1.jpg',
       link: '#'
     },
     {
@@ -29,7 +29,7 @@ export default function NewsPage({ setCurrentPage, onOpenChatbot }) {
       source: 'BeritaJakarta.id',
       sourceUrl: 'beritajakarta.id',
       date: '13 Februari 2025',
-      image: '/images/{hero,news,maps,achievements,components}/news-maggot-02.jpg',
+      image: '/images/news/berita-1.jpg',
       link: '#'
     },
     {
@@ -39,7 +39,7 @@ export default function NewsPage({ setCurrentPage, onOpenChatbot }) {
       source: 'RadarOnline.id',
       sourceUrl: 'radaronline.id',
       date: '14 Februari 2025',
-      image: '/images/{hero,news,maps,achievements,components}/news-maggot-03.jpg',
+      image: '/images/news/berita-1.jpg',
       link: '#'
     }
   ]

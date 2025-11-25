@@ -2,6 +2,7 @@ import React from 'react'
 import { MapPin, ArrowRight } from 'lucide-react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import { siteStats, pjlpInfo } from '../config/siteConfig'
 
 export default function AboutPage({ setCurrentPage, onOpenChatbot }) {
   const boundaries = [
@@ -28,21 +29,21 @@ export default function AboutPage({ setCurrentPage, onOpenChatbot }) {
       type: 'Sertifikat GIA',
       title: 'Inisiator dari Inovasi Pengolahan Sampah Organik',
       date: '8 September 2025',
-      image: '/images/{hero,news,maps,achievements,components}/achievement-sertifikat-gia.jpg',
+      image: '/images/achievements/prestasi-1.jpg',
       action: 'Lihat Selengkapnya'
     },
     {
       type: 'Presentasi',
       title: 'Pengolahan Sampah Organik',
       date: '8 September 2025',
-      image: '/images/{hero,news,maps,achievements,components}/achievement-presentasi-sampah.jpg',
+      image: '/images/achievements/prestasi-2.jpg',
       action: 'Lihat Presentasi'
     },
     {
       type: 'Video',
       title: 'Kualitas Inovasi Daerah',
       date: '8 September 2025',
-      image: '/images/{hero,news,maps,achievements,components}/achievement-video-inovasi.jpg',
+      image: '/images/achievements/prestasi-3.jpg',
       action: 'Lihat Video'
     }
   ]
@@ -75,8 +76,8 @@ export default function AboutPage({ setCurrentPage, onOpenChatbot }) {
           <div className="text-base sm:text-lg md:text-2xl lg:text-3xl text-black leading-relaxed">
             <p>
               Kelurahan Jagakarsa merupakan salah satu Kelurahan yang berada di Kecamatan Jagakarsa Kota Administrasi Jakarta Selatan yang memiliki{' '}
-              <span className="font-bold">luas sebesar : 4,850,000 m²</span> serta mempunyai{' '}
-              <span className="font-bold">7 RW</span> dan <span className="font-bold">82 RT</span>.
+              <span className="font-bold">luas sebesar : {siteStats.luas}</span> serta mempunyai{' '}
+              <span className="font-bold">{siteStats.rw} RW</span> dan <span className="font-bold">{siteStats.rt} RT</span>.
             </p>
             <p className="mt-4 sm:mt-6">
               Kelurahan Jagakarsa sebagai instansi pemerintah yang melayani masyarakat harus menjalankan fungsi dengan sebaik-baiknya. Karena standar organisasi dan kinerja Kelurahan telah diatur oleh Undang-undang serta peraturan yang ada. Untuk itu, sebagai pertanggungjawaban dari hasil kegiatan dan pelayanan yang dilakukan.
@@ -125,6 +126,69 @@ export default function AboutPage({ setCurrentPage, onOpenChatbot }) {
                   alt="Peta Kelurahan Jagakarsa"
                   className="w-full h-48 sm:h-64 md:h-96 object-cover"
                 />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PJLP Section (PPSU & PerPetra) */}
+      <section className="py-12 sm:py-16 md:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-primary-dark mb-8 sm:mb-12">
+            PJLP (Petugas Jaga Lingkungan Permukiman)
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-8 sm:gap-10">
+            {/* PPSU Card */}
+            <div className="bg-gradient-to-br from-primary-lighter to-white rounded-3xl shadow-lg p-6 sm:p-8 border-2 border-primary-light hover:shadow-xl transition-all">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-primary-dark mb-3 sm:mb-4">
+                {pjlpInfo.ppsu.title}
+              </h3>
+              <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-4 sm:mb-6">
+                {pjlpInfo.ppsu.description}
+              </p>
+              <div className="mb-4 sm:mb-6 p-3 sm:p-4 bg-secondary/10 rounded-lg">
+                <p className="text-base sm:text-lg font-semibold text-primary-dark">
+                  Jumlah Personil: <span className="text-secondary">{pjlpInfo.ppsu.jumlah}</span>
+                </p>
+              </div>
+              <div>
+                <h4 className="text-base sm:text-lg font-bold text-primary-dark mb-3">Tugas Utama:</h4>
+                <ul className="space-y-2 sm:space-y-3">
+                  {pjlpInfo.ppsu.tugasUtama.map((tugas, idx) => (
+                    <li key={idx} className="flex gap-3">
+                      <span className="text-secondary font-bold flex-shrink-0">•</span>
+                      <span className="text-sm sm:text-base text-black">{tugas}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* PerPetra Card */}
+            <div className="bg-gradient-to-br from-primary-lighter to-white rounded-3xl shadow-lg p-6 sm:p-8 border-2 border-primary-light hover:shadow-xl transition-all">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-primary-dark mb-3 sm:mb-4">
+                {pjlpInfo.perpetra.title}
+              </h3>
+              <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-4 sm:mb-6">
+                {pjlpInfo.perpetra.description}
+              </p>
+              <div className="mb-4 sm:mb-6 p-3 sm:p-4 bg-secondary/10 rounded-lg">
+                <p className="text-base sm:text-lg font-semibold text-primary-dark">
+                  Jumlah Personil: <span className="text-secondary">{pjlpInfo.perpetra.jumlah}</span>
+                </p>
+              </div>
+              <div>
+                <h4 className="text-base sm:text-lg font-bold text-primary-dark mb-3">Tugas Utama:</h4>
+                <ul className="space-y-2 sm:space-y-3">
+                  {pjlpInfo.perpetra.tugasUtama.map((tugas, idx) => (
+                    <li key={idx} className="flex gap-3">
+                      <span className="text-secondary font-bold flex-shrink-0">•</span>
+                      <span className="text-sm sm:text-base text-black">{tugas}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>

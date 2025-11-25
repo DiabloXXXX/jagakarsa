@@ -2,6 +2,7 @@ import React from 'react'
 import { ArrowLeft, Users } from 'lucide-react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import { siteStats } from '../config/siteConfig'
 
 export default function CommunityOrganizationsPage({ setCurrentPage, onOpenChatbot }) {
   const handleBack = () => {
@@ -93,46 +94,46 @@ export default function CommunityOrganizationsPage({ setCurrentPage, onOpenChatb
       <Header setCurrentPage={setCurrentPage} onOpenChatbot={onOpenChatbot} />
 
       {/* Main Content */}
-      <section className="py-16 md:py-24 bg-primary-lighter mt-3.5">
+      <section className="py-12 sm:py-16 md:py-24 bg-primary-lighter mt-3.5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* Title Section */}
-          <div className="text-center mb-16">
-            <h1 className="text-6xl font-extrabold text-primary-dark mb-8">LEMBAGA KEMASYARAKATAN</h1>
-            <p className="text-3xl font-bold text-black max-w-4xl mx-auto">
+          <div className="text-center mb-10 sm:mb-12 md:mb-16">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary-dark mb-4 sm:mb-6 md:mb-8">LEMBAGA KEMASYARAKATAN</h1>
+            <p className="text-base sm:text-lg md:text-2xl lg:text-3xl font-bold text-black max-w-4xl mx-auto px-2 sm:px-4">
               Wadah partisipasi masyarakat dalam penyelenggaraan pemerintahan, pembangunan, dan kemasyarakatan di tingkat kelurahan.
             </p>
           </div>
 
-          {/* Organizations Grid */}
-          <div className="space-y-8 mb-16">
+          {/* Organizations List */}
+          <div className="space-y-6 sm:space-y-8 mb-10 sm:mb-12 md:mb-16">
             {organizations.map((org) => (
               <div
                 key={org.id}
-                className="bg-white rounded-lg border border-gray-400 overflow-hidden hover:shadow-lg transition-shadow p-8"
+                className="bg-white rounded-lg border border-gray-400 overflow-hidden hover:shadow-lg transition-shadow p-4 sm:p-6 md:p-8"
               >
-                <div className="flex items-start justify-between gap-6">
+                <div className="flex flex-col gap-4">
                   <div className="flex-1">
-                    <h3 className="text-3xl font-bold text-primary-dark mb-4">
+                    <h3 className="text-lg sm:text-2xl md:text-3xl font-bold text-primary-dark mb-2 sm:mb-3 md:mb-4 break-words">
                       {org.title}
                     </h3>
                     {org.subtitle && (
-                      <p className="text-lg text-gray-600 mb-4">{org.subtitle}</p>
+                      <p className="text-xs sm:text-sm md:text-lg text-gray-600 mb-2 sm:mb-3 md:mb-4 break-words">{org.subtitle}</p>
                     )}
-                    <p className="text-2xl font-semibold text-black leading-relaxed mb-6">
+                    <p className="text-sm sm:text-base md:text-xl font-semibold text-black leading-relaxed mb-4 sm:mb-5 md:mb-6 break-words">
                       {org.description}
                     </p>
 
                     {/* Member Count */}
-                    <div className="flex items-center gap-4">
-                      <div className="w-14 h-14 bg-primary-light rounded-lg flex items-center justify-center flex-shrink-0">
-                        <Users size={28} className="text-white" />
+                    <div className="flex items-center gap-3 sm:gap-4">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-primary-light rounded-lg flex items-center justify-center flex-shrink-0">
+                        <Users size={20} className="sm:w-7 sm:h-7 text-white" />
                       </div>
                       <div>
-                        <p className="text-lg font-bold text-primary-dark">
+                        <p className="text-xs sm:text-sm md:text-lg font-bold text-primary-dark">
                           {org.countLabel || 'Total Anggota'}:
                         </p>
-                        <p className="text-4xl font-semibold text-black">
+                        <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-black">
                           {org.members || org.count}
                         </p>
                       </div>
@@ -144,27 +145,27 @@ export default function CommunityOrganizationsPage({ setCurrentPage, onOpenChatb
           </div>
 
           {/* Summary Section */}
-          <div className="bg-white rounded-lg p-12 mb-16 border-2 border-primary-light">
-            <h3 className="text-3xl font-bold text-primary-dark mb-8">Ringkasan Lembaga Kemasyarakatan</h3>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="space-y-4">
-                <div className="flex items-center gap-4">
-                  <div className="w-4 h-6 bg-primary-dark rounded"></div>
-                  <p className="text-xl font-semibold text-black">Lembaga Pemerintahan: 5 (RW, RT, LMK, FKDM, Pengelola RPTRA)</p>
+          <div className="bg-white rounded-lg p-6 sm:p-8 md:p-12 mb-10 sm:mb-12 md:mb-16 border-2 border-primary-light">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-primary-dark mb-4 sm:mb-6 md:mb-8">Ringkasan Lembaga Kemasyarakatan</h3>
+            <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
+              <div className="space-y-3 sm:space-y-4">
+                <div className="flex items-center gap-3 sm:gap-4">
+                  <div className="w-3 h-5 sm:w-4 sm:h-6 bg-primary-dark rounded"></div>
+                  <p className="text-sm sm:text-base md:text-xl font-semibold text-black">Lembaga Pemerintahan: 5 (RW, RT, LMK, FKDM, Pengelola RPTRA)</p>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-4 h-6 bg-primary-light rounded"></div>
-                  <p className="text-xl font-semibold text-black">Lembaga Sosial & Kesehatan: 5 (PKK, Jumantik, Dasawisma, Posyandu Balita, Posyandu Lansia)</p>
+                <div className="flex items-center gap-3 sm:gap-4">
+                  <div className="w-3 h-5 sm:w-4 sm:h-6 bg-primary-light rounded"></div>
+                  <p className="text-sm sm:text-base md:text-xl font-semibold text-black">Lembaga Sosial & Kesehatan: 5 (PKK, Jumantik, Dasawisma, Posyandu Balita, Posyandu Lansia)</p>
                 </div>
               </div>
-              <div className="space-y-4">
-                <div className="bg-primary-lighter p-6 rounded-lg">
-                  <p className="text-lg font-semibold text-primary-dark mb-2">Total Organisasi</p>
-                  <p className="text-4xl font-bold text-black">10</p>
+              <div className="space-y-3 sm:space-y-4">
+                <div className="bg-primary-lighter p-4 sm:p-5 md:p-6 rounded-lg">
+                  <p className="text-sm sm:text-base md:text-lg font-semibold text-primary-dark mb-1 sm:mb-2">Total Organisasi</p>
+                  <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-black">{siteStats.totalOrganisasi}</p>
                 </div>
-                <div className="bg-primary-light p-6 rounded-lg">
-                  <p className="text-lg font-semibold text-white mb-2">Total Anggota Aktif</p>
-                  <p className="text-4xl font-bold text-white">1,000+</p>
+                <div className="bg-primary-light p-4 sm:p-5 md:p-6 rounded-lg">
+                  <p className="text-sm sm:text-base md:text-lg font-semibold text-white mb-1 sm:mb-2">Total Anggota Aktif</p>
+                  <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">{siteStats.totalAnggotaAktif}</p>
                 </div>
               </div>
             </div>
@@ -173,9 +174,9 @@ export default function CommunityOrganizationsPage({ setCurrentPage, onOpenChatb
           {/* Back Button */}
           <button
             onClick={handleBack}
-            className="mt-12 bg-primary-light hover:bg-primary-dark text-black font-semibold py-3 px-8 rounded-lg flex items-center gap-3 transition-all transform hover:scale-105 text-2xl"
+            className="mt-8 sm:mt-10 md:mt-12 bg-primary-light hover:bg-primary-dark text-black font-semibold py-2 sm:py-3 px-6 sm:px-8 rounded-lg flex items-center gap-2 sm:gap-3 transition-all transform hover:scale-105 text-sm sm:text-base md:text-2xl"
           >
-            <ArrowLeft size={28} />
+            <ArrowLeft size={20} className="sm:w-7 sm:h-7" />
             Kembali
           </button>
         </div>
