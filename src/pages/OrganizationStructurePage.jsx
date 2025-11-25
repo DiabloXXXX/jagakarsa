@@ -28,51 +28,53 @@ export default function OrganizationStructurePage({ setCurrentPage, onOpenChatbo
           </div>
 
           {/* Organization Chart */}
-          <div className="overflow-x-auto -mx-4 sm:mx-0">
-            <svg className="w-full min-w-max" viewBox="0 0 1200 1100" style={{minHeight: '600px'}}>
+          <div className="overflow-x-auto -mx-4 sm:mx-0 bg-gray-50 p-4 sm:p-6 rounded-lg">
+            <svg className="w-full min-w-max" viewBox="0 0 1200 1300" style={{minHeight: '800px'}}>
             {/* Level 1: Lurah */}
-            <foreignObject x="450" y="20" width="300" height="60">
+            <foreignObject x="425" y="20" width="350" height="70">
               <div className="bg-primary-light border-2 border-black px-8 py-3 rounded-lg h-full flex items-center justify-center">
                 <p className="text-center font-bold text-black text-lg">LURAH</p>
               </div>
             </foreignObject>
 
             {/* Line from Lurah to Sekretaris */}
-            <line x1="600" y1="80" x2="600" y2="130" stroke="black" strokeWidth="2"/>
+            <line x1="600" y1="90" x2="600" y2="150" stroke="black" strokeWidth="2"/>
 
             {/* Level 2: Sekretaris Kelurahan */}
-            <foreignObject x="400" y="130" width="400" height="60">
+            <foreignObject x="375" y="150" width="450" height="70">
               <div className="bg-primary-light border-2 border-black px-8 py-3 rounded-lg h-full flex items-center justify-center">
                 <p className="text-center font-bold text-black text-lg">SEKRETARIS KELURAHAN</p>
               </div>
             </foreignObject>
 
-            {/* Horizontal line from Sekretaris to three sections */}
-            <line x1="600" y1="190" x2="600" y2="250" stroke="black" strokeWidth="2"/>
-            <line x1="300" y1="250" x2="900" y2="250" stroke="black" strokeWidth="2"/>
+            {/* Vertical line from Sekretaris down */}
+            <line x1="600" y1="220" x2="600" y2="280" stroke="black" strokeWidth="2"/>
+            
+            {/* Horizontal line to three sections */}
+            <line x1="250" y1="280" x2="950" y2="280" stroke="black" strokeWidth="2"/>
 
             {/* Vertical lines to three sections */}
-            <line x1="300" y1="250" x2="300" y2="310" stroke="black" strokeWidth="2"/>
-            <line x1="600" y1="250" x2="600" y2="310" stroke="black" strokeWidth="2"/>
-            <line x1="900" y1="250" x2="900" y2="310" stroke="black" strokeWidth="2"/>
+            <line x1="250" y1="280" x2="250" y2="350" stroke="black" strokeWidth="2"/>
+            <line x1="600" y1="280" x2="600" y2="350" stroke="black" strokeWidth="2"/>
+            <line x1="950" y1="280" x2="950" y2="350" stroke="black" strokeWidth="2"/>
 
             {/* Level 3: Three Sections */}
             {/* Left: Seksi Pemerintahan */}
-            <foreignObject x="150" y="310" width="300" height="60">
+            <foreignObject x="75" y="350" width="350" height="70">
               <div className="bg-primary-light border-2 border-black px-6 py-3 rounded-lg h-full flex items-center justify-center">
                 <p className="font-bold text-black text-base text-center">SEKSI PEMERINTAHAN</p>
               </div>
             </foreignObject>
 
             {/* Center: Seksi Ekonomi & Pembangunan */}
-            <foreignObject x="450" y="310" width="300" height="60">
+            <foreignObject x="425" y="350" width="350" height="70">
               <div className="bg-primary-light border-2 border-black px-6 py-3 rounded-lg h-full flex items-center justify-center">
                 <p className="font-bold text-black text-base text-center">SEKSI EKONOMI & PEMBANGUNAN</p>
               </div>
             </foreignObject>
 
             {/* Right: Seksi Kesejahteraan Rakyat */}
-            <foreignObject x="750" y="310" width="300" height="60">
+            <foreignObject x="775" y="350" width="350" height="70">
               <div className="bg-primary-light border-2 border-black px-6 py-3 rounded-lg h-full flex items-center justify-center">
                 <p className="font-bold text-black text-base text-center">SEKSI KESEJAHTERAAN RAKYAT</p>
               </div>
@@ -80,69 +82,69 @@ export default function OrganizationStructurePage({ setCurrentPage, onOpenChatbo
 
             {/* Staff under each section */}
             {/* Left section staff */}
-            <line x1="300" y1="370" x2="300" y2="420" stroke="black" strokeWidth="2"/>
-            <foreignObject x="150" y="420" width="300" height="50">
+            <line x1="250" y1="420" x2="250" y2="480" stroke="black" strokeWidth="2"/>
+            <foreignObject x="75" y="480" width="350" height="60">
               <div className="bg-white border-2 border-black px-6 py-3 rounded-lg h-full flex items-center justify-center">
                 <p className="font-semibold text-black text-sm text-center">Staf Pengolah Data</p>
               </div>
             </foreignObject>
-            <foreignObject x="150" y="490" width="300" height="50">
+            <foreignObject x="75" y="560" width="350" height="60">
               <div className="bg-white border-2 border-black px-6 py-3 rounded-lg h-full flex items-center justify-center">
                 <p className="font-semibold text-black text-sm text-center">Staf Penyusun</p>
               </div>
             </foreignObject>
 
             {/* Center section staff */}
-            <line x1="600" y1="370" x2="600" y2="420" stroke="black" strokeWidth="2"/>
-            <foreignObject x="450" y="420" width="300" height="50">
+            <line x1="600" y1="420" x2="600" y2="480" stroke="black" strokeWidth="2"/>
+            <foreignObject x="425" y="480" width="350" height="60">
               <div className="bg-white border-2 border-black px-6 py-3 rounded-lg h-full flex items-center justify-center">
                 <p className="font-semibold text-black text-sm text-center">Staf Pengolah Data</p>
               </div>
             </foreignObject>
-            <foreignObject x="450" y="490" width="300" height="50">
+            <foreignObject x="425" y="560" width="350" height="60">
               <div className="bg-white border-2 border-black px-6 py-3 rounded-lg h-full flex items-center justify-center">
                 <p className="font-semibold text-black text-sm text-center">Staf Penyusun</p>
               </div>
             </foreignObject>
 
             {/* Right section staff */}
-            <line x1="900" y1="370" x2="900" y2="420" stroke="black" strokeWidth="2"/>
-            <foreignObject x="750" y="420" width="300" height="50">
+            <line x1="950" y1="420" x2="950" y2="480" stroke="black" strokeWidth="2"/>
+            <foreignObject x="775" y="480" width="350" height="60">
               <div className="bg-white border-2 border-black px-6 py-3 rounded-lg h-full flex items-center justify-center">
                 <p className="font-semibold text-black text-sm text-center">Staf Pengolah Data</p>
               </div>
             </foreignObject>
-            <foreignObject x="750" y="490" width="300" height="50">
+            <foreignObject x="775" y="560" width="350" height="60">
               <div className="bg-white border-2 border-black px-6 py-3 rounded-lg h-full flex items-center justify-center">
                 <p className="font-semibold text-black text-sm text-center">Staf Penyusun</p>
               </div>
             </foreignObject>
 
             {/* Line to Sekretaris Staff */}
-            <line x1="600" y1="560" x2="600" y2="620" stroke="black" strokeWidth="2"/>
+            <line x1="600" y1="640" x2="600" y2="710" stroke="black" strokeWidth="2"/>
 
             {/* Sekretaris Staff */}
-            <foreignObject x="350" y="620" width="500" height="50">
+            <foreignObject x="300" y="710" width="600" height="60">
               <div className="bg-white border-2 border-black px-6 py-3 rounded-lg h-full flex items-center justify-center">
                 <p className="font-semibold text-black text-sm text-center">Bendahara Pengeluaran</p>
               </div>
             </foreignObject>
-            <foreignObject x="350" y="690" width="500" height="50">
+            <foreignObject x="300" y="800" width="600" height="60">
               <div className="bg-white border-2 border-black px-6 py-3 rounded-lg h-full flex items-center justify-center">
                 <p className="font-semibold text-black text-sm text-center">Pengurus Barang Pembantu</p>
               </div>
             </foreignObject>
-            <foreignObject x="350" y="760" width="500" height="50">
+            <foreignObject x="300" y="890" width="600" height="60">
               <div className="bg-white border-2 border-black px-6 py-3 rounded-lg h-full flex items-center justify-center">
                 <p className="font-semibold text-black text-sm text-center">Staf Pengolah Data</p>
               </div>
             </foreignObject>
-            <foreignObject x="350" y="830" width="500" height="50">
+            <foreignObject x="300" y="980" width="600" height="60">
               <div className="bg-white border-2 border-black px-6 py-3 rounded-lg h-full flex items-center justify-center">
                 <p className="font-semibold text-black text-sm text-center">Staf Administrasi</p>
               </div>
             </foreignObject>
-            <foreignObject x="350" y="900" width="500" height="50">
+            <foreignObject x="300" y="1070" width="600" height="60">
               <div className="bg-white border-2 border-black px-6 py-3 rounded-lg h-full flex items-center justify-center">
                 <p className="font-semibold text-black text-sm text-center">Caraka</p>
               </div>
