@@ -45,7 +45,7 @@ export default function CommunityOrganizationsPage({ setCurrentPage, onOpenChatb
       id: 5,
       title: 'RT (Rukun Tetangga)',
       description: 'Organisasi masyarakat yang berada di bawah RW (Rukun Warga) dan berfungsi untuk membantu pelaksanaan urusan pemerintahan, pelayanan masyarakat, serta menjaga ketertiban dan kebersamaan di lingkungan kecil (biasanya satu blok atau beberapa rumah).',
-      members: 83,
+      members: 82,
       color: 'bg-primary-light'
     },
     {
