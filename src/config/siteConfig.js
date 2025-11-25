@@ -14,10 +14,10 @@ export const visitorStats = {
 }
 
 export const socialLinks = {
-  facebook: 'https://facebook.com/kelurahanjagakarsa',
-  instagram: 'https://instagram.com/kelurahanjagakarsa',
-  youtube: 'https://youtube.com/@kelurahanjagakarsa',
-  tiktok: 'https://tiktok.com/@kelurahanjagakarsa'
+  facebook: '#',
+  instagram: 'https://www.instagram.com/kel.jagakarsa01?igsh=djlldHJmcjA3bTNz',
+  youtube: 'https://youtube.com/@kel.jagakarsa01',
+  tiktok: 'https://www.tiktok.com/@kel.jagakarsa01?_t=ZS-90mgNpLBiT6&_r=1'
 }
 
 export const headerConfig = {
