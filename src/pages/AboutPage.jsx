@@ -29,21 +29,21 @@ export default function AboutPage({ setCurrentPage, onOpenChatbot }) {
       type: 'Sertifikat GIA',
       title: 'Inisiator dari Inovasi Pengolahan Sampah Organik',
       date: '8 September 2025',
-      image: '/images/achievements/prestasi-1.jpg',
+      image: '/images/{hero,news,maps,achievements,components}/prestasi-1.jpg',
       action: 'Lihat Selengkapnya'
     },
     {
       type: 'Presentasi',
       title: 'Pengolahan Sampah Organik',
       date: '8 September 2025',
-      image: '/images/achievements/prestasi-2.jpg',
+      image: '/images/{hero,news,maps,achievements,components}/prestasi-2.png',
       action: 'Lihat Presentasi'
     },
     {
       type: 'Video',
       title: 'Kualitas Inovasi Daerah',
       date: '8 September 2025',
-      image: '/images/achievements/prestasi-3.jpg',
+      image: '/images/{hero,news,maps,achievements,components}/prestasi-3.png',
       action: 'Lihat Video'
     }
   ]
