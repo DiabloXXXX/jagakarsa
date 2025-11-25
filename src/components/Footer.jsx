@@ -1,5 +1,5 @@
 import React from 'react'
-import { MapPin, Phone, Mail, Facebook, Youtube, Instagram } from 'lucide-react'
+import { MapPin, Phone, Mail, Facebook, Youtube, Instagram, Music } from 'lucide-react'
 import { socialLinks } from '../config/siteConfig'
 
 export default function Footer() {
@@ -60,7 +60,7 @@ export default function Footer() {
                   <SocialLink icon={<Facebook size={32} />} href={socialLinks.facebook} label="Facebook" />
                   <SocialLink icon={<Youtube size={32} />} href={socialLinks.youtube} label="YouTube" />
                   <SocialLink icon={<Instagram size={32} />} href={socialLinks.instagram} label="Instagram" />
-                  <SocialLink icon={<TrendingUp size={32} />} href={socialLinks.tiktok} label="TikTok" />
+                  <SocialLink icon={<Music size={32} />} href={socialLinks.tiktok} label="TikTok" />
                 </div>
               </div>
 
