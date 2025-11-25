@@ -95,21 +95,21 @@ export default function AdminDashboardPage({ setCurrentPage, setIsAdmin }) {
     <div className="min-h-screen bg-gray-100 flex flex-col">
       {/* Header */}
       <header className="bg-primary-light text-white shadow-lg sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center justify-between">
-          <div className="flex items-center gap-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 flex items-center justify-between gap-3">
+          <div className="flex items-center gap-3 sm:gap-4">
             <img
               src="/images/{hero,news,maps,achievements,components}/logo.png"
               alt="Kelurahan Jagakarsa Logo"
-              className="w-12 h-12 object-contain"
+              className="w-8 h-8 sm:w-12 sm:h-12 object-contain"
             />
             <div>
-              <h1 className="text-2xl font-bold">Admin Dashboard</h1>
-              <p className="text-white text-sm">Kelurahan Jagakarsa</p>
+              <h1 className="text-lg sm:text-2xl font-bold leading-tight">Admin Dashboard</h1>
+              <p className="text-white text-xs sm:text-sm">Kelurahan Jagakarsa</p>
             </div>
           </div>
           <button
             onClick={handleLogout}
-            className="flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors"
+            className="flex items-center gap-1 sm:gap-2 bg-red-500 hover:bg-red-600 text-white font-semibold py-1.5 sm:py-2 px-3 sm:px-4 rounded-lg transition-colors text-xs sm:text-sm"
           >
             <LogOut size={20} />
             Logout
@@ -117,21 +117,21 @@ export default function AdminDashboardPage({ setCurrentPage, setIsAdmin }) {
         </div>
       </header>
 
-      <div className="flex flex-1 overflow-hidden">
+      <div className="flex flex-1 flex-col md:flex-row overflow-hidden">
         {/* Sidebar */}
-        <aside className="w-56 md:w-64 bg-white shadow-lg border-r border-gray-300 overflow-y-auto">
-          <nav className="p-4 md:p-6 space-y-3 md:space-y-4 sticky top-0">
+        <aside className="bg-white shadow-md md:shadow-lg border-b md:border-b-0 md:border-r border-gray-300">
+          <nav className="px-3 py-3 md:p-6 flex md:block gap-2 md:gap-4 overflow-x-auto md:overflow-visible">
             {sidebarMenus.map((menu) => (
               <button
                 key={menu.id}
                 onClick={() => setActiveSection(menu.id)}
-                className={`w-full text-left px-4 md:px-6 py-3 md:py-4 rounded-lg font-semibold text-sm md:text-base transition-all ${
+                className={`flex-1 md:w-full whitespace-nowrap px-3 md:px-6 py-2 md:py-3 rounded-lg font-semibold text-xs sm:text-sm md:text-base transition-all ${
                   activeSection === menu.id
                     ? 'bg-primary-light text-white shadow-lg'
                     : 'bg-white text-primary-dark hover:bg-gray-100'
                 }`}
               >
-                <span className="mr-3">{menu.icon}</span>
+                <span className="mr-2 md:mr-3">{menu.icon}</span>
                 {menu.label}
               </button>
             ))}
@@ -139,7 +139,7 @@ export default function AdminDashboardPage({ setCurrentPage, setIsAdmin }) {
         </aside>
 
         {/* Main Content */}
-        <main className="flex-1 p-4 md:p-8 bg-gray-100 overflow-y-auto">
+        <main className="flex-1 p-3 sm:p-4 md:p-8 bg-gray-100 overflow-y-auto">
           {activeSection === 'pages' && (
             <div className="space-y-8">
               {/* Header */}
