@@ -15,13 +15,6 @@ export default function CommunityOrganizationsPage({ setCurrentPage, onOpenChatb
   const organizations = [
     {
       id: 1,
-      title: 'Pengelola RPTRA',
-      description: 'Tim yang bertugas mengelola dan merawat RPTRA (Ruang Publik Terpadu Ramah Anak)',
-      members: 11,
-      color: 'bg-primary-light'
-    },
-    {
-      id: 2,
       title: 'FKDM (Forum Kewaspadaan Dini Masyarakat)',
       description: 'Lembaga ini berperan sebagai mata dan telinga masyarakat untuk mendeteksi secara dini potensi gangguan keamanan, ketertiban, atau konflik sosial di wilayah kelurahan.',
       members: 7,
@@ -151,7 +144,7 @@ export default function CommunityOrganizationsPage({ setCurrentPage, onOpenChatb
               <div className="space-y-3 sm:space-y-4">
                 <div className="flex items-center gap-3 sm:gap-4">
                   <div className="w-3 h-5 sm:w-4 sm:h-6 bg-primary-dark rounded"></div>
-                  <p className="text-sm sm:text-base md:text-xl font-semibold text-black">Lembaga Pemerintahan: 5 (RW, RT, LMK, FKDM, Pengelola RPTRA)</p>
+                  <p className="text-sm sm:text-base md:text-xl font-semibold text-black">Lembaga Pemerintahan: 4 (RW, RT, LMK, FKDM)</p>
                 </div>
                 <div className="flex items-center gap-3 sm:gap-4">
                   <div className="w-3 h-5 sm:w-4 sm:h-6 bg-primary-light rounded"></div>
