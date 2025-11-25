@@ -102,11 +102,11 @@ export default function Header({ setCurrentPage, onOpenChatbot }) {
                 <ChevronDown size={20} className={`transform transition-transform ${openDropdown === 'profil' ? 'rotate-180' : ''}`} />
               </button>
               {openDropdown === 'profil' && (
-                <div className="bg-primary-dark rounded-lg ml-4 mt-2 space-y-2">
-                  <button onClick={() => handleNavClick('about')} className="w-full text-left px-4 py-2 hover:bg-primary-lighter rounded font-semibold text-base">Tentang Kelurahan</button>
-                  <button onClick={() => handleNavClick('vision-mission')} className="w-full text-left px-4 py-2 hover:bg-primary-lighter rounded font-semibold text-base">Visi & Misi</button>
-                  <button onClick={() => handleNavClick('organization')} className="w-full text-left px-4 py-2 hover:bg-primary-lighter rounded font-semibold text-base">Struktur Organisasi</button>
-                  <button onClick={() => handleNavClick('tasks')} className="w-full text-left px-4 py-2 hover:bg-primary-lighter rounded font-semibold text-base">Tugas & Fungsi</button>
+                <div className="bg-white rounded-lg ml-4 mt-2 space-y-2 shadow-md">
+                  <button onClick={() => handleNavClick('about')} className="w-full text-left px-4 py-2 hover:bg-primary-lighter rounded font-semibold text-base text-primary-dark">Tentang Kelurahan</button>
+                  <button onClick={() => handleNavClick('vision-mission')} className="w-full text-left px-4 py-2 hover:bg-primary-lighter rounded font-semibold text-base text-primary-dark">Visi & Misi</button>
+                  <button onClick={() => handleNavClick('organization')} className="w-full text-left px-4 py-2 hover:bg-primary-lighter rounded font-semibold text-base text-primary-dark">Struktur Organisasi</button>
+                  <button onClick={() => handleNavClick('tasks')} className="w-full text-left px-4 py-2 hover:bg-primary-lighter rounded font-semibold text-base text-primary-dark">Tugas & Fungsi</button>
                 </div>
               )}
             </div>
@@ -124,9 +124,9 @@ export default function Header({ setCurrentPage, onOpenChatbot }) {
                 <ChevronDown size={20} className={`transform transition-transform ${openDropdown === 'informasi' ? 'rotate-180' : ''}`} />
               </button>
               {openDropdown === 'informasi' && (
-                <div className="bg-primary-dark rounded-lg ml-4 mt-2 space-y-2">
-                  <button onClick={() => handleNavClick('news')} className="w-full text-left px-4 py-2 hover:bg-primary-lighter rounded font-semibold text-base">Berita</button>
-                  <button onClick={() => handleNavClick('flood-areas')} className="w-full text-left px-4 py-2 hover:bg-primary-lighter rounded font-semibold text-base">Area Rawan Banjir</button>
+                <div className="bg-white rounded-lg ml-4 mt-2 space-y-2 shadow-md">
+                  <button onClick={() => handleNavClick('news')} className="w-full text-left px-4 py-2 hover:bg-primary-lighter rounded font-semibold text-base text-primary-dark">Berita</button>
+                  <button onClick={() => handleNavClick('flood-areas')} className="w-full text-left px-4 py-2 hover:bg-primary-lighter rounded font-semibold text-base text-primary-dark">Area Rawan Banjir</button>
                 </div>
               )}
             </div>
