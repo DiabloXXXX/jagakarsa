@@ -46,7 +46,7 @@ export default function NewsPage({ setCurrentPage, onOpenChatbot }) {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header setCurrentPage={setCurrentPage} onOpenChatbot={onOpenChatbot} />
+      <Header setCurrentPage={setCurrentPage} onOpenChatbot={onOpenChatbot} currentPage="news" />
 
       {/* Main Content */}
       <section className="py-16 md:py-24 bg-white mt-3.5">

@@ -51,7 +51,7 @@ export default function BerandaPage({ setCurrentPage, onOpenChatbot }) {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header setCurrentPage={setCurrentPage} onOpenChatbot={onOpenChatbot} />
+      <Header setCurrentPage={setCurrentPage} onOpenChatbot={onOpenChatbot} currentPage="home" />
 
       {/* Hero Section */}
       <section className="relative h-64 sm:h-80 md:h-[586px] bg-cover bg-center overflow-hidden mt-3.5">
