@@ -36,7 +36,7 @@ export default function VisitorStats() {
   }, [])
 
   return (
-    <div className="fixed bottom-24 left-4 sm:left-6 z-30 w-[180px] sm:w-auto max-w-sm">
+    <div className="fixed bottom-20 right-6 z-30 w-[180px] sm:w-auto max-w-sm">
       {/* Main Card - Compact on mobile, richer on desktop */}
       <button
         onClick={() => setShowDetails(!showDetails)}
