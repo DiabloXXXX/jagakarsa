@@ -42,10 +42,16 @@ function App() {
 
   const renderPage = () => {
     // Admin pages
-    if (currentPage === 'admin-login') {
+    if (currentPage === 'admin-login' || currentPage === 'admin') {
+      if (isAdmin) {
+        return <AdminDashboardPage setCurrentPage={setCurrentPage} setIsAdmin={setIsAdmin} />
+      }
       return <AdminLoginPage setCurrentPage={setCurrentPage} setIsAdmin={setIsAdmin} />
     }
     if (currentPage === 'admin-dashboard') {
+      if (!isAdmin) {
+        return <AdminLoginPage setCurrentPage={setCurrentPage} setIsAdmin={setIsAdmin} />
+      }
       return <AdminDashboardPage setCurrentPage={setCurrentPage} setIsAdmin={setIsAdmin} />
     }
 
