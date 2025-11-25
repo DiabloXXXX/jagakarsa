@@ -103,7 +103,7 @@ export default function FloodProneAreasPage({ setCurrentPage, onOpenChatbot }) {
               </div>
               <div>
                 <p className="text-lg font-semibold mb-2">Email</p>
-                <p className="text-xl font-bold">kel_jagakrsa@jakarta.go.id</p>
+                <p className="text-xl font-bold">kel_jagakarsa@jakarta.go.id</p>
               </div>
             </div>
           </div>

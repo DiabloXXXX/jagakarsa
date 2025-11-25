@@ -94,7 +94,7 @@ export default function ServicesInfoPage({ setCurrentPage, onOpenChatbot }) {
                 <Mail size={24} className="sm:w-8 sm:h-8 flex-shrink-0 mt-1" />
                 <div>
                   <p className="text-sm sm:text-base font-semibold mb-1 sm:mb-2">Email</p>
-                  <p className="text-base sm:text-lg md:text-2xl font-bold break-all">kel_jagakrsa@jakarta.go.id</p>
+                  <p className="text-base sm:text-lg md:text-2xl font-bold break-all">kel_jagakarsa@jakarta.go.id</p>
                 </div>
               </div>
               <div className="flex items-start gap-3 sm:gap-4 md:col-span-2">

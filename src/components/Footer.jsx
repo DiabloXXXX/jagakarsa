@@ -41,7 +41,7 @@ export default function Footer() {
                 </div>
                 <div className="flex items-center gap-2 sm:gap-4">
                   <Mail size={20} className="text-white flex-shrink-0 sm:w-7 sm:h-7 md:w-7 md:h-7" />
-                  <p className="text-sm sm:text-lg md:text-2xl font-semibold text-white break-all">kel_jagakrsa@jakarta.go.id</p>
+                  <p className="text-sm sm:text-lg md:text-2xl font-semibold text-white break-all">kel_jagakarsa@jakarta.go.id</p>
                 </div>
               </div>
             </div>
