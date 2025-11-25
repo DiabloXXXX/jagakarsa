@@ -60,7 +60,7 @@ export default function Chatbot({ isOpen, setIsOpen }) {
       ></div>
 
       {/* Chat Modal */}
-      <div className="fixed bottom-24 right-6 w-[568px] max-w-[calc(100vw-48px)] bg-white rounded-2xl shadow-2xl z-50 flex flex-col overflow-hidden"
+      <div className="fixed bottom-24 right-6 w-[420px] max-w-[calc(100vw-48px)] bg-white rounded-2xl shadow-2xl z-50 flex flex-col overflow-hidden"
         style={{
           boxShadow: '0px 5px 10px 5px rgba(0,0,0,0.50)'
         }}
