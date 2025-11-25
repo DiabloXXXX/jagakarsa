@@ -7,6 +7,7 @@ import Achievements from './components/Achievements'
 import Services from './components/Services'
 import FloodInfo from './components/FloodInfo'
 import Chatbot from './components/Chatbot'
+import VisitorStats from './components/VisitorStats'
 import Footer from './components/Footer'
 import AboutPage from './pages/AboutPage'
 import MapPage from './pages/MapPage'
@@ -87,6 +88,7 @@ function App() {
     <div>
       {renderPage()}
       <Chatbot isOpen={showChatbot} setIsOpen={setShowChatbot} />
+      <VisitorStats />
       
       {/* Floating Chatbot Button */}
       <button
