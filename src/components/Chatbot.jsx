@@ -67,30 +67,32 @@ export default function Chatbot({ isOpen, setIsOpen }) {
       >
         {/* Header */}
         <div
-          className="bg-primary-light text-white p-6 flex items-center justify-between rounded-t-2xl"
+          className="bg-primary-light text-white p-4 sm:p-6 flex items-center justify-between rounded-t-2xl"
           style={{
             boxShadow: '0px 5px 10px 5px rgba(0,0,0,0.50)'
           }}
         >
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 flex items-center justify-center shadow-md">
+          <div className="flex items-center gap-3 sm:gap-4 flex-1">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center shadow-md flex-shrink-0">
               <img
                 src="/images/{hero,news,maps,achievements,components}/logo.png"
                 alt="Chatbot"
                 className="w-full h-full object-contain"
               />
             </div>
-            <div>
-              <h3 className="font-bold text-xl">Chat dengan</h3>
-              <h3 className="font-bold text-xl">CHATBOT</h3>
-              <p className="text-sm opacity-90 absolute top-16">Online</p>
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center gap-2 flex-wrap">
+                <h3 className="font-bold text-base sm:text-lg whitespace-nowrap">Chat dengan</h3>
+                <h3 className="font-bold text-base sm:text-lg whitespace-nowrap">CHATBOT</h3>
+              </div>
+              <p className="text-xs sm:text-sm opacity-90 mt-1">🟢 Online</p>
             </div>
           </div>
           <button
             onClick={() => setIsOpen(false)}
-            className="hover:bg-primary-dark p-2 rounded-full transition-colors"
+            className="hover:bg-primary-dark p-2 rounded-full transition-colors flex-shrink-0 ml-2"
           >
-            <X size={24} className="text-white" />
+            <X size={20} className="sm:w-6 sm:h-6 text-white" />
           </button>
         </div>
 
