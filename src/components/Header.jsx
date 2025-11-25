@@ -43,23 +43,23 @@ export default function Header({ setCurrentPage, onOpenChatbot, currentPage }) {
               alt="Kelurahan Jagakarsa Logo"
               className="w-12 sm:w-20 h-12 sm:h-20 object-contain flex-shrink-0"
             />
-            <span className="hidden sm:inline text-2xl lg:text-3xl font-bold">Kelurahan Jagakarsa</span>
+            <span className="text-lg sm:text-2xl lg:text-3xl font-bold">Kelurahan Jagakarsa</span>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-4 lg:gap-8">
-            <div className="relative">
+            <div className="relative pb-1">
               <button onClick={() => handleNavClick('home')} className={`text-xl lg:text-2xl font-bold hover:text-white transition-colors ${currentPage === 'home' ? 'text-white' : 'text-white/80'}`}>Beranda</button>
-              {currentPage === 'home' && <div className="absolute bottom-0 left-0 right-0 h-1 bg-secondary rounded-t"></div>}
+              {currentPage === 'home' && <div className="absolute -bottom-1 left-0 right-0 h-1 bg-secondary rounded-t"></div>}
             </div>
             
             {/* Profil Dropdown */}
-            <div className="relative group">
+            <div className="relative group pb-1">
               <button className={`text-xl lg:text-2xl font-bold hover:text-white transition-colors flex items-center gap-2 cursor-pointer ${isProfilActive ? 'text-white' : 'text-white/80'}`}>
                 Profil
                 <ChevronDown size={20} />
               </button>
-              {isProfilActive && <div className="absolute bottom-0 left-0 right-0 h-1 bg-secondary rounded-t"></div>}
+              {isProfilActive && <div className="absolute -bottom-1 left-0 right-0 h-1 bg-secondary rounded-t"></div>}
               <div className="absolute left-0 mt-2 w-56 bg-white text-primary-dark rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
                 <button onClick={() => handleNavClick('about')} className="w-full text-left px-4 py-3 hover:bg-primary-lighter font-semibold text-base">Tentang Kelurahan</button>
                 <button onClick={() => handleNavClick('vision-mission')} className="w-full text-left px-4 py-3 hover:bg-primary-lighter font-semibold border-t text-base">Visi & Misi</button>
@@ -68,23 +68,23 @@ export default function Header({ setCurrentPage, onOpenChatbot, currentPage }) {
               </div>
             </div>
 
-            <div className="relative">
+            <div className="relative pb-1">
               <button onClick={() => handleNavClick('community-orgs')} className={`text-xl lg:text-2xl font-bold hover:text-white transition-colors ${currentPage === 'community-orgs' ? 'text-white' : 'text-white/80'}`}>Lembaga</button>
-              {currentPage === 'community-orgs' && <div className="absolute bottom-0 left-0 right-0 h-1 bg-secondary rounded-t"></div>}
+              {currentPage === 'community-orgs' && <div className="absolute -bottom-1 left-0 right-0 h-1 bg-secondary rounded-t"></div>}
             </div>
 
-            <div className="relative">
+            <div className="relative pb-1">
               <button onClick={() => handleNavClick('services-info')} className={`text-xl lg:text-2xl font-bold hover:text-white transition-colors ${currentPage === 'services-info' ? 'text-white' : 'text-white/80'}`}>Layanan</button>
-              {currentPage === 'services-info' && <div className="absolute bottom-0 left-0 right-0 h-1 bg-secondary rounded-t"></div>}
+              {currentPage === 'services-info' && <div className="absolute -bottom-1 left-0 right-0 h-1 bg-secondary rounded-t"></div>}
             </div>
 
             {/* Informasi Dropdown */}
-            <div className="relative group">
+            <div className="relative group pb-1">
               <button className={`text-xl lg:text-2xl font-bold hover:text-white transition-colors flex items-center gap-2 cursor-pointer ${isInformasiActive ? 'text-white' : 'text-white/80'}`}>
                 Informasi
                 <ChevronDown size={20} />
               </button>
-              {isInformasiActive && <div className="absolute bottom-0 left-0 right-0 h-1 bg-secondary rounded-t"></div>}
+              {isInformasiActive && <div className="absolute -bottom-1 left-0 right-0 h-1 bg-secondary rounded-t"></div>}
               <div className="absolute left-0 mt-2 w-56 bg-white text-primary-dark rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
                 <button onClick={() => handleNavClick('news')} className="w-full text-left px-4 py-3 hover:bg-primary-lighter font-semibold text-base">Berita</button>
                 <button onClick={() => handleNavClick('flood-areas')} className="w-full text-left px-4 py-3 hover:bg-primary-lighter font-semibold border-t text-base">Area Rawan Banjir</button>

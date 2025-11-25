@@ -7,7 +7,7 @@ export default function Hero({ setCurrentPage }) {
       id="beranda"
       className="relative h-96 md:h-[586px] bg-cover bg-center overflow-hidden"
       style={{
-        backgroundImage: 'url("/images/{hero,news,maps,achievements,components}/hero-beranda.png")',
+        backgroundImage: 'url("/images/{hero,news,maps,achievements,components}/hero-beranda.jpg")',
       }}
     >
       {/* Dark Overlay */}

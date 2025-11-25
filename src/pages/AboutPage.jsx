@@ -55,7 +55,7 @@ export default function AboutPage({ setCurrentPage, onOpenChatbot }) {
       {/* Hero Section */}
       <section className="relative h-64 sm:h-80 md:h-[352px] bg-cover bg-center overflow-hidden mt-3.5">
         <img
-          src="/images/{hero,news,maps,achievements,components}/hero-beranda.png"
+          src="/images/{hero,news,maps,achievements,components}/hero-beranda.jpg"
           alt="Kelurahan Jagakarsa"
           className="w-full h-full object-cover"
         />

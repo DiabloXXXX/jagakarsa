@@ -4,7 +4,7 @@
 
 | No | Nama File Aktual | Path Lokal | Penggunaan |
 |---|---|---|---|
-| 1 | `hero-beranda.png` | `/images/{hero,news,maps,achievements,components}/hero-beranda.png` | Hero section Beranda |
+| 1 | `hero-beranda.jpg` | `/images/{hero,news,maps,achievements,components}/hero-beranda.jpg` | Hero section Beranda |
 | 2 | `logo.png` | `/images/{hero,news,maps,achievements,components}/logo.png` | Logo Header & Footer |
 | 3 | `map-kelurahan-jagakarsa.png` | `/images/{hero,news,maps,achievements,components}/map-kelurahan-jagakarsa.png` | Peta Kelurahan |
 | 4 | `peta-banjir.png` | `/images/{hero,news,maps,achievements,components}/peta-banjir.png` | Peta Area Rawan Banjir |
