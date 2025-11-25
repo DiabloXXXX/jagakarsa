@@ -77,15 +77,11 @@ function TikTokIcon({ size = 24 }) {
       width={size}
       height={size}
       viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
     >
-      {/* Bentuk sederhana gaya TikTok dengan outline saja */}
-      <path d="M9 5v9a3 3 0 1 0 3-3V5a4 4 0 0 0 4 4" />
+      {/* TikTok 2025 style logo - musical note */}
+      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.1 1.75 2.9 2.9 0 0 1 5.1-1.75V9.4a6.29 6.29 0 0 0-5.27 5.3 6.3 6.3 0 0 0 10.88 3.25 6.27 6.27 0 0 0 .78-11.25z" />
     </svg>
   )
 }
