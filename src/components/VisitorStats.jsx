@@ -37,30 +37,30 @@ export default function VisitorStats() {
 
   return (
     <div className="fixed bottom-24 left-6 z-30 max-w-sm">
-      {/* Main Card - Apple Glass Style */}
+      {/* Main Card - Apple Glass Style Green */}
       <button
         onClick={() => setShowDetails(!showDetails)}
-        className="w-full bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-6 hover:bg-white/15 transition-all hover:border-white/30 text-left group"
+        className="w-full bg-primary-light/30 backdrop-blur-2xl border border-primary-light/50 rounded-3xl p-6 hover:bg-primary-light/40 transition-all hover:border-primary-light/70 text-left group shadow-lg"
       >
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-3">
-            <div className="p-2 bg-gradient-to-br from-secondary to-orange-500 rounded-xl group-hover:scale-110 transition-transform">
+            <div className="p-2 bg-gradient-to-br from-primary-light to-primary-dark rounded-xl group-hover:scale-110 transition-transform shadow-md">
               <TrendingUp size={20} className="text-white" />
             </div>
-            <p className="text-sm font-semibold text-white/80">Kunjungan Hari Ini</p>
+            <p className="text-sm font-semibold text-white">Kunjungan Hari Ini</p>
           </div>
           <ChevronDown 
             size={20} 
-            className={`text-white/60 transition-transform ${showDetails ? 'rotate-180' : ''}`}
+            className={`text-white transition-transform ${showDetails ? 'rotate-180' : ''}`}
           />
         </div>
         <p className="text-4xl font-bold text-white">{todayVisits}</p>
       </button>
 
-      {/* Details Panel - Apple Glass Style */}
+      {/* Details Panel - Apple Glass Style Green */}
       {showDetails && (
-        <div className="mt-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-6 space-y-3 animate-fadeIn">
-          <h4 className="text-sm font-semibold text-white/80 uppercase tracking-wide">Jumlah Kunjungan</h4>
+        <div className="mt-3 bg-primary-light/30 backdrop-blur-2xl border border-primary-light/50 rounded-3xl p-6 space-y-3 animate-fadeIn shadow-lg">
+          <h4 className="text-sm font-semibold text-white uppercase tracking-wide">Jumlah Kunjungan</h4>
           
           <div className="space-y-2">
             {[
@@ -71,9 +71,9 @@ export default function VisitorStats() {
               { label: 'Bulan Ini', value: visitorBreakdown.thisMonth },
               { label: 'Bulan Lalu', value: visitorBreakdown.lastMonth },
             ].map((item, idx) => (
-              <div key={idx} className="flex justify-between items-center py-2 px-3 rounded-lg hover:bg-white/5 transition-colors">
-                <span className="text-sm text-white/70">{item.label}</span>
-                <span className={`font-semibold ${item.highlight ? 'text-secondary text-base' : 'text-white/90 text-sm'}`}>
+              <div key={idx} className="flex justify-between items-center py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
+                <span className="text-sm text-white/90">{item.label}</span>
+                <span className={`font-semibold ${item.highlight ? 'text-secondary text-base' : 'text-white text-sm'}`}>
                   {item.value}
                 </span>
               </div>
@@ -81,8 +81,8 @@ export default function VisitorStats() {
           </div>
 
           {/* Total */}
-          <div className="pt-3 border-t border-white/10">
-            <div className="flex justify-between items-center py-2 px-3 bg-gradient-to-r from-secondary/20 to-orange-500/20 rounded-lg">
+          <div className="pt-3 border-t border-primary-light/30">
+            <div className="flex justify-between items-center py-2 px-3 bg-primary-dark/30 rounded-lg">
               <span className="text-sm font-semibold text-white">Total Kunjungan</span>
               <span className="font-bold text-secondary">{visitorBreakdown.total.toLocaleString()}</span>
             </div>
