@@ -63,8 +63,8 @@ export default function BerandaPage({ setCurrentPage, onOpenChatbot }) {
         <div className="absolute inset-0 bg-black/50"></div>
 
         {/* Content */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-6">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 sm:mb-6 md:mb-8 leading-tight max-w-4xl">
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-6 py-8 sm:py-12">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 sm:mb-6 md:mb-8 leading-tight max-w-4xl mt-4 sm:mt-6 mb-6 sm:mb-8">
             Selamat Datang <br /> Di Website Kelurahan Jagakarsa
           </h1>
 

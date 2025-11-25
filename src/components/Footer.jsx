@@ -3,13 +3,37 @@ import { MapPin, Phone, Mail, Facebook, Youtube, Instagram, TrendingUp } from 'l
 import { socialLinks, visitorStats } from '../config/siteConfig'
 
 export default function Footer() {
-  const [deviceVisits, setDeviceVisits] = useState(0)
+  const [todayVisits, setTodayVisits] = useState(0)
+  const [showVisitorStats, setShowVisitorStats] = useState(false)
+
+  // Placeholder visitor statistics data
+  const visitorBreakdown = {
+    today: 13,
+    yesterday: 22,
+    thisWeek: 205,
+    lastWeek: 246,
+    thisMonth: 735,
+    lastMonth: 1849,
+    total: 13701
+  }
 
   useEffect(() => {
-    // Get visit count from localStorage
-    const visits = parseInt(localStorage.getItem('deviceVisits') || '0') + 1
-    localStorage.setItem('deviceVisits', visits.toString())
-    setDeviceVisits(visits)
+    // Get today's visit count from localStorage
+    const today = new Date().toDateString()
+    const lastDate = localStorage.getItem('lastVisitDate')
+    
+    let visits = parseInt(localStorage.getItem('todayVisits') || '0')
+    
+    // Reset if it's a new day
+    if (lastDate !== today) {
+      visits = 1
+      localStorage.setItem('lastVisitDate', today)
+    } else {
+      visits += 1
+    }
+    
+    localStorage.setItem('todayVisits', visits.toString())
+    setTodayVisits(visits)
   }, [])
   return (
     <footer className="bg-primary-dark text-white">
@@ -76,19 +100,59 @@ export default function Footer() {
               <div>
                 <h3 className="text-2xl font-bold mb-6">Statistik Pengunjung</h3>
                 <div className="space-y-6">
-                  <div className="bg-white/10 rounded-lg p-6 backdrop-blur-sm">
+                  {/* Today's Visits - Main Display */}
+                  <button 
+                    onClick={() => setShowVisitorStats(!showVisitorStats)}
+                    className="w-full bg-gradient-to-br from-secondary to-orange-500 rounded-lg p-6 backdrop-blur-sm hover:shadow-lg hover:scale-105 transition-all cursor-pointer group text-left"
+                  >
                     <div className="flex items-center gap-4 mb-3">
-                      <TrendingUp size={28} className="text-secondary" />
-                      <p className="text-lg font-semibold text-white">Total Pengunjung</p>
+                      <TrendingUp size={28} className="text-white group-hover:scale-110 transition-transform" />
+                      <p className="text-lg font-semibold text-white">Kunjungan Hari Ini</p>
                     </div>
-                    <p className="text-3xl font-bold text-secondary">{visitorStats.totalVisitors}</p>
-                    <p className="text-sm text-white/70 mt-2">Update: {visitorStats.lastUpdate}</p>
-                  </div>
-                  <div className="bg-white/10 rounded-lg p-6 backdrop-blur-sm">
-                    <p className="text-lg font-semibold text-white mb-2">Kunjungan Perangkat Anda</p>
-                    <p className="text-3xl font-bold text-secondary">{deviceVisits}</p>
-                    <p className="text-sm text-white/70 mt-2">Disimpan di perangkat ini</p>
-                  </div>
+                    <p className="text-4xl font-bold text-white">{visitorBreakdown.today}</p>
+                    <p className="text-sm text-white/80 mt-2">Klik untuk lihat detail</p>
+                  </button>
+
+                  {/* Visitor Stats Modal */}
+                  {showVisitorStats && (
+                    <div className="bg-gray-900/95 border border-secondary rounded-lg p-6 backdrop-blur-sm space-y-4 animate-fadeIn">
+                      <h4 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                        <TrendingUp size={20} className="text-secondary" />
+                        Jumlah Kunjungan
+                      </h4>
+                      
+                      <div className="space-y-3 text-sm">
+                        <div className="flex justify-between items-center pb-2 border-b border-gray-700">
+                          <span className="text-white">Hari Ini</span>
+                          <span className="font-bold text-secondary text-lg">{visitorBreakdown.today}</span>
+                        </div>
+                        <div className="flex justify-between items-center pb-2 border-b border-gray-700">
+                          <span className="text-white">Kemarin</span>
+                          <span className="font-bold text-white text-lg">{visitorBreakdown.yesterday}</span>
+                        </div>
+                        <div className="flex justify-between items-center pb-2 border-b border-gray-700">
+                          <span className="text-white">Minggu Ini</span>
+                          <span className="font-bold text-white text-lg">{visitorBreakdown.thisWeek}</span>
+                        </div>
+                        <div className="flex justify-between items-center pb-2 border-b border-gray-700">
+                          <span className="text-white">Minggu Lalu</span>
+                          <span className="font-bold text-white text-lg">{visitorBreakdown.lastWeek}</span>
+                        </div>
+                        <div className="flex justify-between items-center pb-2 border-b border-gray-700">
+                          <span className="text-white">Bulan Ini</span>
+                          <span className="font-bold text-white text-lg">{visitorBreakdown.thisMonth}</span>
+                        </div>
+                        <div className="flex justify-between items-center pb-2 border-b border-gray-700">
+                          <span className="text-white">Bulan Lalu</span>
+                          <span className="font-bold text-white text-lg">{visitorBreakdown.lastMonth}</span>
+                        </div>
+                        <div className="flex justify-between items-center pt-2 bg-secondary/20 px-3 py-2 rounded">
+                          <span className="text-white font-semibold">Total Kunjungan</span>
+                          <span className="font-bold text-secondary text-lg">{visitorBreakdown.total.toLocaleString()}</span>
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
