@@ -78,13 +78,14 @@ function TikTokIcon({ size = 24 }) {
       height={size}
       viewBox="0 0 24 24"
       fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <rect x="4" y="4" width="16" height="16" rx="4" fill="#000000" />
-      <path
-        d="M13.5 7.5V13c0 1.38-1.12 2.5-2.5 2.5S8.5 14.38 8.5 13s1.12-2.5 2.5-2.5c.18 0 .36.02.53.06V9.1A3.5 3.5 0 0 0 11 9C8.79 9 7 10.79 7 13s1.79 4 4 4c2.21 0 4-1.79 4-4v-2.3c.42.32.93.55 1.5.63V9.7c-.73-.12-1.32-.45-1.77-.9-.5-.5-.73-1.06-.73-1.3h-1.5Z"
-        fill="#ffffff"
-      />
+      {/* Bentuk sederhana gaya TikTok dengan outline saja */}
+      <path d="M9 5v9a3 3 0 1 0 3-3V5a4 4 0 0 0 4 4" />
     </svg>
   )
 }
