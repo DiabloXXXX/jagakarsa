@@ -1,7 +1,7 @@
 {
   "name": "kelurahan-jagakarsa-website",
   "version": "1.0.0",
-  "description": "Company Profile Website for Kelurahan Jagakarsa",
+  "description": "Website Resmi Kelurahan Jagakarsa untuk informasi profil, layanan, berita, dan data wilayah",
   "type": "module",
   "scripts": {
     "dev": "vite",
