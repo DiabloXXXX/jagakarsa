@@ -86,7 +86,7 @@ export default function BerandaPage({ setCurrentPage, onOpenChatbot }) {
       </section>
 
       {/* About Content Section */}
-      <section className="py-12 sm:py-16 md:py-24 bg-white">
+      <section id="tentang" className="py-12 sm:py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-base sm:text-lg md:text-2xl text-black leading-relaxed space-y-4 sm:space-y-6">
             <p>
@@ -171,7 +171,10 @@ export default function BerandaPage({ setCurrentPage, onOpenChatbot }) {
                   <p className="text-xs sm:text-sm md:text-xl text-gray-600">{achievement.date}</p>
 
                   {/* Action Button */}
-                  <button className="w-full bg-primary-light hover:bg-primary-dark text-black font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg transition-all transform hover:scale-105 text-xs sm:text-sm md:text-2xl cursor-pointer">
+                  <button 
+                    onClick={() => alert(`${achievement.title}\n\n${achievement.description}`)}
+                    className="w-full bg-primary-light hover:bg-primary-dark text-black font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg transition-all transform hover:scale-105 text-xs sm:text-sm md:text-2xl cursor-pointer"
+                  >
                     {achievement.action}
                   </button>
                 </div>

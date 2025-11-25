@@ -90,11 +90,11 @@ export default function CommunityOrganizationsPage({ setCurrentPage, onOpenChatb
   ]
 
   return (
-    <div className="min-h-screen bg-primary-lighter">
+    <div className="min-h-screen bg-white">
       <Header setCurrentPage={setCurrentPage} onOpenChatbot={onOpenChatbot} />
 
       {/* Main Content */}
-      <section className="py-12 sm:py-16 md:py-24 bg-primary-lighter mt-3.5">
+      <section className="py-12 sm:py-16 md:py-24 bg-white mt-3.5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* Title Section */}
