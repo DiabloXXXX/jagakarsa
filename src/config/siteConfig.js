@@ -14,7 +14,6 @@ export const visitorStats = {
 }
 
 export const socialLinks = {
-  facebook: '#',
   instagram: 'https://www.instagram.com/kel.jagakarsa01?igsh=djlldHJmcjA3bTNz',
   youtube: 'https://youtube.com/@kel.jagakarsa01',
   tiktok: 'https://www.tiktok.com/@kel.jagakarsa01?_t=ZS-90mgNpLBiT6&_r=1'
