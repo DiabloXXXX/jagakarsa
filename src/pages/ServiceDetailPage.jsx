@@ -18,27 +18,6 @@ export default function ServiceDetailPage({ setCurrentPage, serviceType = 'ppsu'
       description: 'Tenaga yang bertugas membantu menjaga kebersihan, ketertiban, serta memelihara sarana dan prasarana umum di wilayah kelurahan.',
       totalMembers: 84,
       icon: <Users size={40} />
-    },
-    kesehatan: {
-      title: 'Layanan Kesehatan',
-      subtitle: 'Posyandu & Klinik Kelurahan',
-      description: 'Layanan kesehatan dasar untuk masyarakat termasuk pemeriksaan kesehatan rutin dan program vaksinasi.',
-      totalMembers: 12,
-      icon: <Users size={40} />
-    },
-    lembaga: {
-      title: 'Lembaga Kemasyarakatan',
-      subtitle: 'Organisasi Masyarakat',
-      description: 'Berbagai organisasi kemasyarakatan yang aktif dalam pemberdayaan dan pengembangan masyarakat.',
-      totalMembers: 15,
-      icon: <Users size={40} />
-    },
-    keamanan: {
-      title: 'Keamanan & Ketertiban',
-      subtitle: 'Satuan Keamanan Lingkungan',
-      description: 'Menjaga keamanan dan ketertiban lingkungan kelurahan melalui patroli dan pengawasan berkelanjutan.',
-      totalMembers: 24,
-      icon: <Users size={40} />
     }
   }
 
