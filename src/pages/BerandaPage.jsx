@@ -64,9 +64,17 @@ export default function BerandaPage({ setCurrentPage, onOpenChatbot }) {
 
         {/* Content */}
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-6 py-8 sm:py-12">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 sm:mb-6 md:mb-8 leading-tight max-w-4xl mt-4 sm:mt-6 mb-6 sm:mb-8">
-            Selamat Datang <br /> Di Website Kelurahan Jagakarsa
-          </h1>
+          <div className="space-y-3 sm:space-y-4 md:space-y-6 mb-8 sm:mb-12">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight max-w-5xl">
+              Selamat Datang
+            </h1>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight max-w-4xl">
+              Website Resmi Kelurahan Jagakarsa
+            </h2>
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-white/90 max-w-3xl">
+              Sumber informasi terbaru tentang pemerintahan di Kelurahan Jagakarsa
+            </p>
+          </div>
 
           {/* CTA Button */}
           <button 
