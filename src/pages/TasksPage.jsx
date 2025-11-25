@@ -108,15 +108,15 @@ export default function TasksPage({ setCurrentPage, onOpenChatbot }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* Title Section */}
-          <div className="text-center mb-16">
-            <h1 className="text-6xl font-extrabold text-primary-dark mb-8">TUGAS</h1>
-            <h2 className="text-3xl font-bold text-black">
+          <div className="text-center mb-10 sm:mb-12 md:mb-16">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary-dark mb-4 sm:mb-6 md:mb-8">TUGAS</h1>
+            <h2 className="text-base sm:text-lg md:text-2xl lg:text-3xl font-bold text-black px-4">
               Peran dari masing-masing unsur perangkat kelurahan
             </h2>
           </div>
 
           {/* Tasks List */}
-          <div className="space-y-6 mb-16">
+          <div className="space-y-4 sm:space-y-6 mb-10 sm:mb-12 md:mb-16">
             {tasks.map((task) => (
               <div
                 key={task.id}
@@ -124,20 +124,20 @@ export default function TasksPage({ setCurrentPage, onOpenChatbot }) {
               >
                 <button
                   onClick={() => toggleExpand(task.id)}
-                  className="w-full p-8 text-left hover:bg-gray-50 transition-colors"
+                  className="w-full p-4 sm:p-6 md:p-8 text-left hover:bg-gray-50 transition-colors"
                 >
-                  <div className="flex items-start justify-between gap-4">
+                  <div className="flex items-start justify-between gap-3 sm:gap-4">
                     <div className="flex-1">
-                      <h3 className="text-4xl font-bold text-black mb-4">
+                      <h3 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black mb-2 sm:mb-3 md:mb-4">
                         {task.title}
                       </h3>
-                      <p className="text-2xl font-semibold text-black leading-relaxed">
+                      <p className="text-sm sm:text-base md:text-xl lg:text-2xl font-semibold text-black leading-relaxed">
                         {task.shortDescription}
                       </p>
                     </div>
                     <ChevronDown
-                      size={32}
-                      className={`text-primary-dark flex-shrink-0 transition-transform ${
+                      size={24}
+                      className={`sm:w-8 sm:h-8 text-primary-dark flex-shrink-0 transition-transform ${
                         expandedTask === task.id ? 'rotate-180' : ''
                       }`}
                     />
@@ -146,14 +146,14 @@ export default function TasksPage({ setCurrentPage, onOpenChatbot }) {
 
                 {/* Expanded Content */}
                 {expandedTask === task.id && (
-                  <div className="px-8 pb-8 bg-gray-50 border-t border-gray-200">
-                    <div className="space-y-4 mb-6">
+                  <div className="px-4 sm:px-6 md:px-8 pb-4 sm:pb-6 md:pb-8 bg-gray-50 border-t border-gray-200">
+                    <div className="space-y-3 sm:space-y-4 mb-4 sm:mb-6">
                       {task.fullDescription.slice(0, 2).map((item, index) => (
-                        <div key={index} className="flex gap-4">
-                          <span className="text-primary-dark font-bold text-xl flex-shrink-0">
+                        <div key={index} className="flex gap-3 sm:gap-4">
+                          <span className="text-primary-dark font-bold text-base sm:text-lg md:text-xl flex-shrink-0">
                             {index + 1}.
                           </span>
-                          <p className="text-2xl font-semibold text-black leading-relaxed">
+                          <p className="text-sm sm:text-base md:text-lg lg:text-2xl font-semibold text-black leading-relaxed">
                             {item}
                           </p>
                         </div>
@@ -162,7 +162,7 @@ export default function TasksPage({ setCurrentPage, onOpenChatbot }) {
                     {task.id === 5 && (
                       <button
                         onClick={() => toggleFullView(task.id)}
-                        className="text-sky-700 text-2xl font-semibold underline hover:text-sky-900 transition-colors"
+                        className="text-sky-700 text-sm sm:text-base md:text-lg lg:text-2xl font-semibold underline hover:text-sky-900 transition-colors"
                       >
                         Baca Selengkapnya
                       </button>
@@ -176,9 +176,9 @@ export default function TasksPage({ setCurrentPage, onOpenChatbot }) {
           {/* Back Button */}
           <button
             onClick={handleBack}
-            className="mt-12 bg-primary-light hover:bg-primary-dark text-black font-semibold py-3 px-8 rounded-lg flex items-center gap-3 transition-all transform hover:scale-105 text-2xl"
+            className="mt-8 sm:mt-10 md:mt-12 bg-primary-light hover:bg-primary-dark text-black font-semibold py-2 sm:py-3 px-6 sm:px-8 rounded-lg flex items-center gap-2 sm:gap-3 transition-all transform hover:scale-105 text-sm sm:text-base md:text-2xl"
           >
-            <ArrowLeft size={28} />
+            <ArrowLeft size={20} className="sm:w-7 sm:h-7" />
             Kembali
           </button>
         </div>
@@ -195,29 +195,29 @@ export default function TasksPage({ setCurrentPage, onOpenChatbot }) {
 
           {/* Modal */}
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-            <div className="bg-white rounded-lg shadow-2xl max-w-4xl max-h-[90vh] overflow-y-auto">
+            <div className="bg-white rounded-lg shadow-2xl max-w-4xl max-h-[90vh] overflow-y-auto w-full">
               {/* Modal Header */}
-              <div className="sticky top-0 bg-white border-b border-gray-200 p-8 flex items-center justify-between">
-                <h3 className="text-4xl font-bold text-black">
+              <div className="sticky top-0 bg-white border-b border-gray-200 p-4 sm:p-6 md:p-8 flex items-center justify-between gap-4">
+                <h3 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black">
                   {tasks[4].title}
                 </h3>
                 <button
                   onClick={() => toggleFullView(null)}
-                  className="text-sky-700 text-2xl font-semibold underline hover:text-sky-900 transition-colors"
+                  className="text-sky-700 text-sm sm:text-base md:text-lg lg:text-2xl font-semibold underline hover:text-sky-900 transition-colors flex-shrink-0"
                 >
                   Tutup
                 </button>
               </div>
 
               {/* Modal Content */}
-              <div className="p-8">
-                <div className="space-y-6">
+              <div className="p-4 sm:p-6 md:p-8">
+                <div className="space-y-4 sm:space-y-6">
                   {tasks[4].fullDescription.map((item, index) => (
-                    <div key={index} className="flex gap-4">
-                      <span className="text-primary-dark font-bold text-xl flex-shrink-0">
+                    <div key={index} className="flex gap-3 sm:gap-4">
+                      <span className="text-primary-dark font-bold text-base sm:text-lg md:text-xl flex-shrink-0">
                         {index + 1}.
                       </span>
-                      <p className="text-2xl font-semibold text-black leading-relaxed">
+                      <p className="text-sm sm:text-base md:text-lg lg:text-2xl font-semibold text-black leading-relaxed">
                         {item}
                       </p>
                     </div>

@@ -53,22 +53,22 @@ export default function NewsPage({ setCurrentPage, onOpenChatbot }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* Title Section */}
-          <div className="text-center mb-16">
-            <h1 className="text-6xl font-extrabold text-black mb-6">BERITA KELURAHAN</h1>
-            <p className="text-3xl font-bold text-black max-w-4xl mx-auto">
+          <div className="text-center mb-10 sm:mb-12 md:mb-16">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-black mb-4 sm:mb-6">BERITA KELURAHAN</h1>
+            <p className="text-base sm:text-lg md:text-2xl lg:text-3xl font-bold text-black max-w-4xl mx-auto px-4">
               Pusat berita dan informasi terbaru dari Kelurahan Jagakarsa untuk masyarakat
             </p>
           </div>
 
           {/* News Grid */}
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-10 sm:mb-12 md:mb-16">
             {news.map((item) => (
               <div
                 key={item.id}
                 className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
               >
                 {/* Image */}
-                <div className="relative h-72 overflow-hidden rounded-t-3xl">
+                <div className="relative h-40 sm:h-48 md:h-72 overflow-hidden rounded-t-3xl">
                   <img
                     src={item.image}
                     alt={item.title}
@@ -77,25 +77,25 @@ export default function NewsPage({ setCurrentPage, onOpenChatbot }) {
                 </div>
 
                 {/* Content */}
-                <div className="p-8 h-60 flex flex-col justify-between">
+                <div className="p-4 sm:p-6 md:p-8 flex flex-col justify-between min-h-48 sm:min-h-56 md:min-h-60">
                   <div>
-                    <h3 className="text-xl font-bold text-primary-dark mb-4 line-clamp-3">
+                    <h3 className="text-sm sm:text-base md:text-xl font-bold text-primary-dark mb-2 sm:mb-3 md:mb-4 line-clamp-3">
                       {item.title}
                     </h3>
-                    <p className="text-base font-semibold text-black line-clamp-2">
+                    <p className="text-xs sm:text-sm md:text-base font-semibold text-black line-clamp-2">
                       {item.description}
                     </p>
                   </div>
 
                   {/* Footer Info */}
-                  <div className="space-y-3 pt-4 border-t border-gray-200">
+                  <div className="space-y-2 sm:space-y-3 pt-3 sm:pt-4 border-t border-gray-200">
                     <div className="flex items-center gap-2">
-                      <div className="w-5 h-5 border-2 border-primary-dark rounded"></div>
-                      <p className="text-sm font-semibold text-black">{item.sourceUrl}</p>
+                      <div className="w-4 h-4 sm:w-5 sm:h-5 border-2 border-primary-dark rounded"></div>
+                      <p className="text-xs sm:text-sm font-semibold text-black">{item.sourceUrl}</p>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Calendar size={18} className="text-primary-dark" />
-                      <p className="text-sm font-semibold text-primary-dark">{item.date}</p>
+                      <Calendar size={16} className="sm:w-5 sm:h-5 text-primary-dark" />
+                      <p className="text-xs sm:text-sm font-semibold text-primary-dark">{item.date}</p>
                     </div>
                   </div>
                 </div>
@@ -106,9 +106,9 @@ export default function NewsPage({ setCurrentPage, onOpenChatbot }) {
           {/* Back Button */}
           <button
             onClick={handleBack}
-            className="mt-12 bg-primary-light hover:bg-primary-dark text-black font-semibold py-3 px-8 rounded-lg flex items-center gap-3 transition-all transform hover:scale-105 text-2xl"
+            className="mt-8 sm:mt-10 md:mt-12 bg-primary-light hover:bg-primary-dark text-black font-semibold py-2 sm:py-3 px-6 sm:px-8 rounded-lg flex items-center gap-2 sm:gap-3 transition-all transform hover:scale-105 text-sm sm:text-base md:text-2xl"
           >
-            <ArrowLeft size={28} />
+            <ArrowLeft size={20} className="sm:w-7 sm:h-7" />
             Kembali
           </button>
         </div>

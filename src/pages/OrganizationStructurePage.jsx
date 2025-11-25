@@ -20,15 +20,16 @@ export default function OrganizationStructurePage({ setCurrentPage, onOpenChatbo
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* Title Section */}
-          <div className="text-center mb-16">
-            <h1 className="text-6xl font-extrabold text-primary-dark mb-6">STRUKTUR ORGANISASI</h1>
-            <h2 className="text-3xl font-bold text-black">
+          <div className="text-center mb-10 sm:mb-12 md:mb-16">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary-dark mb-4 sm:mb-6">STRUKTUR ORGANISASI</h1>
+            <h2 className="text-base sm:text-lg md:text-2xl lg:text-3xl font-bold text-black px-4">
               Struktur Organisasi Pemerintahan Kelurahan
             </h2>
           </div>
 
           {/* Organization Chart */}
-          <svg className="w-full" viewBox="0 0 1200 1100" style={{minHeight: '1100px'}}>
+          <div className="overflow-x-auto -mx-4 sm:mx-0">
+            <svg className="w-full min-w-max" viewBox="0 0 1200 1100" style={{minHeight: '600px'}}>
             {/* Level 1: Lurah */}
             <foreignObject x="450" y="20" width="300" height="60">
               <div className="bg-primary-light border-2 border-black px-8 py-3 rounded-lg h-full flex items-center justify-center">
@@ -146,12 +147,13 @@ export default function OrganizationStructurePage({ setCurrentPage, onOpenChatbo
                 <p className="font-semibold text-black text-sm text-center">Caraka</p>
               </div>
             </foreignObject>
-          </svg>
+            </svg>
+          </div>
 
           {/* Description */}
-          <div className="mt-16 bg-gray-50 p-8 rounded-lg">
-            <h3 className="text-2xl font-bold text-primary-dark mb-4">Penjelasan Struktur</h3>
-            <div className="space-y-4 text-gray-700 text-lg">
+          <div className="mt-10 sm:mt-12 md:mt-16 bg-gray-50 p-4 sm:p-6 md:p-8 rounded-lg">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-primary-dark mb-4 sm:mb-6">Penjelasan Struktur</h3>
+            <div className="space-y-3 sm:space-y-4 text-gray-700 text-sm sm:text-base md:text-lg">
               <p>
                 <span className="font-bold text-primary-light">Lurah</span> - Memimpin dan mengoordinasikan seluruh kegiatan pemerintahan kelurahan
               </p>
@@ -173,9 +175,9 @@ export default function OrganizationStructurePage({ setCurrentPage, onOpenChatbo
           {/* Back Button */}
           <button
             onClick={handleBack}
-            className="mt-12 bg-primary-light hover:bg-primary-dark text-black font-semibold py-3 px-8 rounded-lg flex items-center gap-3 transition-all transform hover:scale-105 text-2xl"
+            className="mt-8 sm:mt-10 md:mt-12 bg-primary-light hover:bg-primary-dark text-black font-semibold py-2 sm:py-3 px-6 sm:px-8 rounded-lg flex items-center gap-2 sm:gap-3 transition-all transform hover:scale-105 text-sm sm:text-base md:text-2xl"
           >
-            <ArrowLeft size={28} />
+            <ArrowLeft size={20} className="sm:w-7 sm:h-7" />
             Kembali
           </button>
         </div>
