@@ -65,7 +65,7 @@ export default function VisitorStats() {
 
       {/* Details Panel - Apple Glass Style Green, lebih kecil di mobile */}
       {showDetails && (
-        <div className="mt-2 sm:mt-3 bg-primary-light/40 backdrop-blur-2xl border border-primary-light/60 rounded-3xl p-4 sm:p-5 space-y-3 animate-fadeIn shadow-xl max-h-64 sm:max-h-80 overflow-y-auto">
+        <div className="mt-2 sm:mt-3 bg-primary-light/40 backdrop-blur-2xl border border-primary-light/60 rounded-3xl p-4 sm:p-5 space-y-3 animate-fadeIn shadow-xl max-h-64 sm:max-h-80 overflow-y-auto no-scrollbar">
           <h4 className="text-xs sm:text-sm font-semibold text-black uppercase tracking-wide">Jumlah Kunjungan</h4>
           
           <div className="space-y-1.5 sm:space-y-2 text-[11px] sm:text-xs">

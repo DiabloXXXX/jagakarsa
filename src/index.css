@@ -33,3 +33,13 @@ html {
 .transition-all {
   transition: all 0.3s ease;
 }
+
+/* Hide scrollbar utility (used for VisitorStats panel) */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
