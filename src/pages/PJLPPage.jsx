@@ -16,27 +16,17 @@ export default function PJLPPage({ setCurrentPage, onOpenChatbot }) {
       id: 1,
       title: 'PPSU (Petugas Pengelola Sarana Umum)',
       description: 'Petugas yang bertugas mengelola, memelihara, dan menjaga sarana umum di wilayah Kelurahan Jagakarsa',
-      count: 15,
+      count: null,
       countLabel: 'Jumlah Personil',
-      mainTasks: [
-        'Memelihara dan membersihkan sarana umum (jalan, taman, fasilitas publik)',
-        'Melakukan perbaikan dan pemeliharaan rutin sarana umum',
-        'Menjaga kebersihan dan keindahan lingkungan kelurahan',
-        'Melaporkan kerusakan sarana umum kepada pimpinan'
-      ]
+      mainTasks: []
     },
     {
       id: 2,
       title: 'PerPetra (Perangkat Perumahan dan Permukiman)',
       description: 'Perangkat yang menangani urusan perumahan, permukiman, dan lingkungan hidup',
-      count: 8,
+      count: null,
       countLabel: 'Jumlah Personil',
-      mainTasks: [
-        'Mengawasi dan membina penyelenggaraan perumahan dan permukiman',
-        'Melaksanakan program peningkatan kualitas lingkungan hidup',
-        'Mengelola data dan informasi perumahan dan permukiman',
-        'Melakukan koordinasi dengan instansi terkait di bidang perumahan'
-      ]
+      mainTasks: []
     }
   ]
 
@@ -80,66 +70,40 @@ export default function PJLPPage({ setCurrentPage, onOpenChatbot }) {
                   </div>
 
                   {/* Count Box */}
-                  <div className="bg-primary-light rounded-xl p-4 sm:p-5 md:p-6 mb-6 sm:mb-8 inline-block">
-                    <p className="text-xs sm:text-sm md:text-base font-semibold text-white mb-1 sm:mb-2">
-                      {category.countLabel}
-                    </p>
-                    <p className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
-                      {category.count}
-                    </p>
-                  </div>
+                  {category.count !== null && (
+                    <div className="bg-primary-light rounded-xl p-4 sm:p-5 md:p-6 mb-6 sm:mb-8 inline-block">
+                      <p className="text-xs sm:text-sm md:text-base font-semibold text-white mb-1 sm:mb-2">
+                        {category.countLabel}
+                      </p>
+                      <p className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
+                        {category.count}
+                      </p>
+                    </div>
+                  )}
 
                   {/* Main Tasks */}
-                  <div className="mt-8 sm:mt-10">
-                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-primary-dark mb-4 sm:mb-6">
-                      Tugas Utama:
-                    </h3>
-                    <ul className="space-y-3 sm:space-y-4">
-                      {category.mainTasks.map((task, idx) => (
-                        <li key={idx} className="flex items-start gap-3 sm:gap-4">
-                          <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-secondary rounded-full mt-2 sm:mt-2.5 flex-shrink-0"></div>
-                          <span className="text-sm sm:text-base md:text-lg text-black leading-relaxed">
-                            {task}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  {category.mainTasks.length > 0 && (
+                    <div className="mt-8 sm:mt-10">
+                      <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-primary-dark mb-4 sm:mb-6">
+                        Tugas Utama:
+                      </h3>
+                      <ul className="space-y-3 sm:space-y-4">
+                        {category.mainTasks.map((task, idx) => (
+                          <li key={idx} className="flex items-start gap-3 sm:gap-4">
+                            <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-secondary rounded-full mt-2 sm:mt-2.5 flex-shrink-0"></div>
+                            <span className="text-sm sm:text-base md:text-lg text-black leading-relaxed">
+                              {task}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Summary Section */}
-          <div className="bg-white rounded-2xl p-6 sm:p-8 md:p-12 mb-12 sm:mb-16 md:mb-20 border-2 border-primary-light">
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-primary-dark mb-6 sm:mb-8">
-              Ringkasan PJLP
-            </h3>
-            <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
-              <div className="space-y-4 sm:space-y-5">
-                <div className="flex items-start gap-3 sm:gap-4">
-                  <div className="w-3 h-3 sm:w-3.5 sm:h-3.5 bg-primary-dark rounded-full mt-1 flex-shrink-0"></div>
-                  <p className="text-sm sm:text-base md:text-lg font-semibold text-black">
-                    Total PJLP: 2 kategori (PPSU & PerPetra)
-                  </p>
-                </div>
-                <div className="flex items-start gap-3 sm:gap-4">
-                  <div className="w-3 h-3 sm:w-3.5 sm:h-3.5 bg-primary-dark rounded-full mt-1 flex-shrink-0"></div>
-                  <p className="text-sm sm:text-base md:text-lg font-semibold text-black">
-                    Total Personil: 23 orang
-                  </p>
-                </div>
-              </div>
-              <div className="bg-primary-lighter p-4 sm:p-5 md:p-6 rounded-lg">
-                <p className="text-sm sm:text-base md:text-lg font-semibold text-primary-dark mb-2 sm:mb-3">
-                  Visi PJLP
-                </p>
-                <p className="text-sm sm:text-base md:text-lg text-black">
-                  Menciptakan lingkungan permukiman yang bersih, indah, dan sehat untuk meningkatkan kualitas hidup masyarakat Kelurahan Jagakarsa
-                </p>
-              </div>
-            </div>
-          </div>
 
           {/* Back Button */}
           <button
