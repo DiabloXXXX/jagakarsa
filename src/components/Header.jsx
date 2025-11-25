@@ -37,7 +37,7 @@ export default function Header({ setCurrentPage, onOpenChatbot }) {
             <img
               src="/images/{hero,news,maps,achievements,components}/logo.png"
               alt="Kelurahan Jagakarsa Logo"
-              className="w-14 sm:w-32 h-14 sm:h-32 object-contain flex-shrink-0"
+              className="w-12 sm:w-20 h-12 sm:h-20 object-contain flex-shrink-0"
             />
             <span className="hidden sm:inline text-2xl lg:text-3xl font-bold">Kelurahan Jagakarsa</span>
           </div>
